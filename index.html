@@ -74,7 +74,18 @@
         </div>
         </div>
         </fieldset>
-
+        <div class="ageQuestion change" id="question-dob">
+            <h2 id="ageQuestion">How old am I?</h2>
+            <label class="label prompt" id="birthDatePrompt">Please enter your date of birth:
+                <br>
+                <input class="dob" type="date" id="userDate">
+            </label>
+            <br>
+            <p class="result hide" id="ageResult"></p>
+            <p class="error hide" id="ageError"></p>
+            <button class="calculate" id="calculateButtonAge">Calculate</button>
+            <button class="recalculate hide" id="recalculateButtonAge">Recalculate</button>
+        </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
