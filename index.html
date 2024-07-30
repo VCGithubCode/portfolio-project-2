@@ -98,6 +98,26 @@
             <button class="calculate" id="calculateButtonBorn">Calculate</button>
             <button class="recalculate hide" id="recalculateButtonBorn">Recalculate</button>
         </div>
+        <div class="ageQuestion hide change" id="question-difference">
+            <h2 id="differenceQuestion">How many days between?</h2>
+            <label class="label prompt" id="eventDatePrompt">Please enter a date:
+                <br>
+                <input class="difference" type="date" id="eventDate">
+            </label>
+            <br>
+            <label class="label prompt" id="currentDatePrompt">Please enter another date to see how many days there are between them:
+                <br>
+                <input class="difference" type="date" id="currentDate">
+            </label>
+            <br>
+            <p class="result hide" id="differenceResult"></p>
+            <p class="error hide" id="differenceError"></p>
+            <button class="calculate" id="calculateButtonDifference">Calculate</button>
+            <button class="recalculate hide" id="recalculateButtonDifference">Recalculate</button>
+        </div>
+      </div>
+    </div>
+  </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
