@@ -327,7 +327,7 @@ function displayQuestion(calculatorType) {
       bornResultElement.classList.remove("hide");
       break;
     case "HowLongUntilSince":
-      ageQuestionElement.textContent = "How long until / since?";
+      ageQuestionElement.textContent = "How many days between?";
       differenceResultElement.classList.remove("hide");
       break;
     default:
