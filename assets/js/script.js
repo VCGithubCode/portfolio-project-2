@@ -231,6 +231,9 @@ function resetCalculateState() {
   resetDifferenceMessage();
 }
 
+/**
+ * Shows the recalculate button and hides other elements.
+ */
 function showRecalculateButton() {
   document
     .querySelectorAll(".calculate")
