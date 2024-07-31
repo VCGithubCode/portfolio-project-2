@@ -93,6 +93,18 @@ const differenceResultElement = document.getElementById("question-difference");
 const ageErrorElement = document.getElementById("ageError");
 const bornErrorElement = document.getElementById("bornError");
 const differenceErrorElement = document.getElementById("differenceError");
+const defaultMessages = {
+  age: "How old am I?",
+  born: "What year was I born?",
+  difference: "How many days between?",
+};
+
+function resetMessages() {
+  document.getElementById("ageQuestion").textContent = defaultMessages.age;
+  document.getElementById("bornQuestion").textContent = defaultMessages.born;
+  document.getElementById("differenceQuestion").textContent =
+    defaultMessages.difference;
+}
 
 /**
  * Handles the change event of the radio buttons.
