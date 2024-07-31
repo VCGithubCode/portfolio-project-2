@@ -173,7 +173,7 @@ function runCalculator(calculatorType) {
   }
 
   resetCalculateState();
-    radioInput.checked = true;
+  radioInput.checked = true;
   displayQuestion(calculatorType);
 }
 
@@ -233,4 +233,3 @@ function hideDifferencePrompts() {
   document.getElementById("eventDatePrompt").classList.add("hide");
   document.getElementById("currentDatePrompt").classList.add("hide");
 }
-
