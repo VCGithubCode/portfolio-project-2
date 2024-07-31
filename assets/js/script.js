@@ -253,7 +253,7 @@ function showRecalculateButton() {
  * Runs the calculator based on the specified calculator type.
  *
  * @param {string} calculatorType - The type of calculator to run.
- * @returns {void}
+ * @returns {void} This function does not return a value.
  */
 function runCalculator(calculatorType) {
   if (!isValidCalculatorType(calculatorType)) {
@@ -303,7 +303,7 @@ function selectCalculatorType(type) {
  * Displays a question based on the calculator type.
  *
  * @param {string} calculatorType - The type of calculator.
- * @returns {void}
+ * @returns {void} This function does not return a value.
  */
 function displayQuestion(calculatorType) {
   const ageQuestionElement = document.getElementById("ageQuestion");
@@ -359,7 +359,7 @@ function hideDifferencePrompts() {
 
 /**
  * Calculates the correct date of birth based on the user input and displays the age.
- * @returns {void}
+ * @returns {void} This function does not return a value.
  */
 function calculateCorrectDOB() {
   const userDate = document.getElementById("userDate").value;
