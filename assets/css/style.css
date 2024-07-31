@@ -60,7 +60,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    background: url(/assets/images/hourglass-freepik.webp);
+    background: url(../images/hourglass-freepik.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 75%;
