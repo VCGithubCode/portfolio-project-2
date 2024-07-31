@@ -75,3 +75,124 @@ document
     runCalculator("HowLongUntilSince");
   });
 
+const ageResultElement = document.getElementById("question-dob");
+const bornResultElement = document.getElementById("question-born");
+const differenceResultElement = document.getElementById("question-difference");
+
+const ageErrorElement = document.getElementById("ageError");
+const bornErrorElement = document.getElementById("bornError");
+const differenceErrorElement = document.getElementById("differenceError");
+
+function handleRadioChange() {
+  const selectedResultType = document.querySelector(
+    'input[name="resultType"]:checked'
+  ).value;
+  displayQuestion(selectedResultType);
+}
+
+function resetCalculateState() {
+  document
+    .querySelectorAll(".calculate")
+    .forEach((button) => button.classList.remove("hide"));
+  document
+    .querySelectorAll(".dob, .years, .difference")
+    .forEach((input) => input.classList.remove("hide"));
+  document
+    .querySelectorAll(".recalculate")
+    .forEach((button) => button.classList.add("hide"));
+  document
+    .querySelectorAll(".result")
+    .forEach((result) => result.classList.add("hide"));
+  document
+    .querySelectorAll(".error")
+    .forEach((error) => error.classList.add("hide"));
+
+  // Show all labels and prompts initially
+  document
+    .querySelectorAll(".prompt")
+    .forEach((prompt) => prompt.classList.remove("hide"));
+}
+
+function showRecalculateButton() {
+  document
+    .querySelectorAll(".calculate")
+    .forEach((button) => button.classList.add("hide"));
+  document
+    .querySelectorAll(".dob, .years, .difference")
+    .forEach((input) => input.classList.add("hide"));
+  document
+    .querySelectorAll(".recalculate")
+    .forEach((button) => button.classList.remove("hide"));
+  document
+    .querySelectorAll(".result")
+    .forEach((result) => result.classList.remove("hide"));
+}
+
+function runCalculator(calculatorType) {
+  const validCalculatorTypes = [
+    "HowOldAmIQuestion",
+    "WhatYearWasIBorn",
+    "HowLongUntilSince",
+  ];
+
+  if (!validCalculatorTypes.includes(calculatorType)) {
+    console.error(`Unknown calculator type: ${calculatorType}. Aborting!`);
+    return;
+  }
+
+  resetCalculateState();
+  const radioInput = document.querySelector(`input[value="${calculatorType}"]`);
+
+  if (radioInput) {
+    radioInput.checked = true;
+    displayQuestion(calculatorType);
+  } else {
+    console.error(
+      `Radio button for calculator type ${calculatorType} not found. Aborting!`
+    );
+  }
+
+  displayQuestion(calculatorType);
+}
+
+function displayQuestion(calculatorType) {
+  const ageQuestionElement = document.getElementById("ageQuestion");
+  if (!ageQuestionElement) {
+    console.error("Element with id 'ageQuestion' not found. Aborting!");
+    return;
+  }
+
+  ageResultElement.classList.add("hide");
+  bornResultElement.classList.add("hide");
+  differenceResultElement.classList.add("hide");
+
+  switch (calculatorType) {
+    case "HowOldAmIQuestion":
+      ageQuestionElement.textContent = "How old am I?";
+      ageResultElement.classList.remove("hide");
+      break;
+    case "WhatYearWasIBorn":
+      ageQuestionElement.textContent = "What year was I born?";
+      bornResultElement.classList.remove("hide");
+      break;
+    case "HowLongUntilSince":
+      ageQuestionElement.textContent = "How long until / since?";
+      differenceResultElement.classList.remove("hide");
+      break;
+    default:
+      console.error(`Unknown calculator type: ${calculatorType}. Aborting!`);
+  }
+}
+
+function hideAgePrompts() {
+  document.getElementById("birthDatePrompt").classList.add("hide");
+}
+
+function hideBornPrompts() {
+  document.getElementById("bornPrompt").classList.add("hide");
+}
+
+function hideDifferencePrompts() {
+  document.getElementById("eventDatePrompt").classList.add("hide");
+  document.getElementById("currentDatePrompt").classList.add("hide");
+}
