@@ -18,14 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
   span.addEventListener("click", closeModal);
   window.addEventListener("click", outsideClick);
 
+  // Open the modal
   function toggleModal() {
     modal.style.display = "flex";
   }
 
+  // Close the modal when clicking on (x)
   function closeModal() {
     modal.style.display = "none";
   }
 
+  // Close the modal when clicking outside of the modal content
   function outsideClick(e) {
     if (e.target == modal) modal.style.display = "none";
   }
@@ -104,8 +107,10 @@ function handleRadioChange() {
 
 /**
  * Resets the state of the calculate form.
- * Hides the "recalculate" button, result, and error messages.
- * Shows the "calculate" button, input fields, and labels.
+ * Hides the result messages, error messages, and prompts.
+ * Clears the input values and removes the "hide" class from the calculate buttons and hidden inputs.
+ * Adds the "hide" class to the recalculate buttons.
+ * Calls helper functions to reset specific messages.
  */
 function resetCalculateState() {
   document
@@ -190,6 +195,7 @@ function displayQuestion(calculatorType) {
     return;
   }
 
+  // Hide all result elements
   ageResultElement.classList.add("hide");
   bornResultElement.classList.add("hide");
   differenceResultElement.classList.add("hide");
