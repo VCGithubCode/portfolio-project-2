@@ -251,7 +251,7 @@ function showRecalculateButton() {
 
 /**
  * Runs the calculator based on the specified calculator type.
- * 
+ *
  * @param {string} calculatorType - The type of calculator to run.
  * @returns {void}
  */
@@ -291,7 +291,7 @@ function isValidCalculatorType(type) {
 function selectCalculatorType(type) {
   const radioInput = document.querySelector(`input[value="${type}"]`);
   if (radioInput) {
-  radioInput.checked = true;
+    radioInput.checked = true;
   } else {
     console.error(
       `Radio button for calculator type ${type} not found. Aborting!`
