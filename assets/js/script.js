@@ -204,26 +204,31 @@ function resetInputsForType(type) {
  * Calls helper functions to reset specific messages.
  */
 function resetCalculateState() {
-  document
-    .querySelectorAll(".calculate")
-    .forEach((button) => button.classList.remove("hide"));
-  document
-    .querySelectorAll(".dob, .years, .difference")
-    .forEach((input) => input.classList.remove("hide"));
-  document
-    .querySelectorAll(".recalculate")
-    .forEach((button) => button.classList.add("hide"));
-  document
-    .querySelectorAll(".result")
-    .forEach((result) => result.classList.add("hide"));
-  document
-    .querySelectorAll(".error")
-    .forEach((error) => error.classList.add("hide"));
+  const calculateButtons = document.querySelectorAll(".calculate");
+  const hiddenInputs = document.querySelectorAll(".dob, .years, .difference");
+  const recalculateButtons = document.querySelectorAll(".recalculate");
+  const resultMessages = document.querySelectorAll(".result");
+  const errorMessages = document.querySelectorAll(".error");
+  const allPrompts = document.querySelectorAll(".prompt");
 
-  // Show all labels and prompts initially
-  document
-    .querySelectorAll(".prompt")
-    .forEach((prompt) => prompt.classList.remove("hide"));
+  // Array methods are faster than forEach
+  Array.from(calculateButtons).forEach((button) =>
+    button.classList.remove("hide")
+  );
+  Array.from(hiddenInputs).forEach((input) => {
+    input.value = "";
+    input.classList.remove("hide");
+  });
+  Array.from(recalculateButtons).forEach((button) =>
+    button.classList.add("hide")
+  );
+  Array.from(resultMessages).forEach((result) => result.classList.add("hide"));
+  Array.from(errorMessages).forEach((error) => error.classList.add("hide"));
+  Array.from(allPrompts).forEach((prompt) => prompt.classList.remove("hide"));
+
+  resetAgeMessage();
+  resetBornMessage();
+  resetDifferenceMessage();
 }
 
 function showRecalculateButton() {
