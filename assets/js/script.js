@@ -256,29 +256,47 @@ function showRecalculateButton() {
  * @returns {void}
  */
 function runCalculator(calculatorType) {
-  const radioInput = document.querySelector(`input[value="${calculatorType}"]`);
-
-  if (!radioInput) {
-    console.error(
-      `Radio button for calculator type ${calculatorType} not found. Aborting!`
-    );
-    return;
-  }
-
-  const validCalculatorTypes = new Set([
-    "HowOldAmIQuestion",
-    "WhatYearWasIBorn",
-    "HowLongUntilSince",
-  ]);
-
-  if (!validCalculatorTypes.has(calculatorType)) {
+  if (!isValidCalculatorType(calculatorType)) {
     console.error(`Unknown calculator type: ${calculatorType}. Aborting!`);
     return;
   }
 
-  resetCalculateState();
+  resetCalculateState(); // Reset the state of the UI elements
+  selectCalculatorType(calculatorType); // Set the radio button for the type
+  displayQuestion(calculatorType); // Display the appropriate question and results
+}
+
+function resetAgeMessage() {
+  document.getElementById("ageQuestion").textContent = defaultMessages.age;
+}
+
+function resetBornMessage() {
+  document.getElementById("bornQuestion").textContent = defaultMessages.born;
+}
+
+function resetDifferenceMessage() {
+  document.getElementById("differenceQuestion").textContent =
+    defaultMessages.difference;
+}
+
+function isValidCalculatorType(type) {
+  const validTypes = [
+    "HowOldAmIQuestion",
+    "WhatYearWasIBorn",
+    "HowLongUntilSince",
+  ];
+  return validTypes.includes(type);
+}
+
+function selectCalculatorType(type) {
+  const radioInput = document.querySelector(`input[value="${type}"]`);
+  if (radioInput) {
   radioInput.checked = true;
-  displayQuestion(calculatorType);
+  } else {
+    console.error(
+      `Radio button for calculator type ${type} not found. Aborting!`
+    );
+  }
 }
 
 /**
