@@ -110,11 +110,90 @@ function resetMessages() {
  * Handles the change event of the radio buttons.
  * Retrieves the selected result type and calls the displayQuestion function.
  */
+
 function handleRadioChange() {
   const selectedResultType = document.querySelector(
     'input[name="resultType"]:checked'
   ).value;
+
+  // Reset input fields for the selected calculator type
+
+  resetInputsForType(selectedResultType);
+
+  // Reset messages to default
+
+  resetMessages();
+
+  // Update display based on the selected calculator type
+
+  runCalculator(selectedResultType);
   displayQuestion(selectedResultType);
+}
+
+/**
+ * Resets input fields and visibility based on the type of calculator.
+ *
+ * @param {string} type - The type of calculator.
+ */
+function resetInputsForType(type) {
+  // Clear input fields and reset visibility based on the type of calculator
+
+  switch (type) {
+    case "HowOldAmIQuestion":
+      document.querySelectorAll(".dob").forEach((input) => (input.value = ""));
+
+      document
+        .querySelectorAll(".years, .difference")
+        .forEach((input) => input.classList.add("hide"));
+
+      break;
+
+    case "WhatYearWasIBorn":
+      document
+        .querySelectorAll(".years")
+        .forEach((input) => (input.value = ""));
+
+      document
+        .querySelectorAll(".dob, .difference")
+        .forEach((input) => input.classList.add("hide"));
+
+      break;
+
+    case "HowLongUntilSince":
+      document
+        .querySelectorAll(".difference")
+        .forEach((input) => (input.value = ""));
+
+      document
+        .querySelectorAll(".dob, .years")
+        .forEach((input) => input.classList.add("hide"));
+
+      break;
+
+    default:
+      console.error(`Unknown calculator type: ${type}. No inputs reset.`);
+  }
+
+  // Show prompts for the selected type
+
+  switch (type) {
+    case "HowOldAmIQuestion":
+      document.getElementById("birthDatePrompt").classList.remove("hide");
+
+      break;
+
+    case "WhatYearWasIBorn":
+      document.getElementById("bornPrompt").classList.remove("hide");
+
+      break;
+
+    case "HowLongUntilSince":
+      document.getElementById("eventDatePrompt").classList.remove("hide");
+
+      document.getElementById("currentDatePrompt").classList.remove("hide");
+
+      break;
+  }
 }
 
 /**
