@@ -81,8 +81,30 @@ h1 {
     font-family: var(--headline-text);
     font-size: 2rem;
     text-align: center;
-    background: #000000e5;
+    background: var(--transparent-bg-dark);
     padding: 0.4rem;
+}
+
+#instructionButton,
+.calculate,
+.recalculate {
+    background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
+    margin: 0.5rem auto;
+    padding: 2px;
+    font-size: 1em;
+    color: white;
+    border: solid 1px whitesmoke;
+    border-radius: 8px;
+}
+
+#instructionButton:hover,
+.calculate:hover,
+.recalculate:hover {
+    background: #000000;
+    color: rgba(230, 228, 228, 0.932);
+    font-size: 1em;
+    box-shadow: 0 0 30px 3px #ffffff;
+    transition: ease-in-out 0.3s;
 }
 
 /* The Modal (background) */
@@ -142,6 +164,8 @@ h1 {
   text-decoration: underline;
   margin-bottom: 1.6rem;
 }
+
+
 
 .interaction {
     align-items: center;
