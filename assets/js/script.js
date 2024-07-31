@@ -75,7 +75,7 @@ document
 document
   .getElementById("recalculateButtonDifference")
   .addEventListener("click", () => {
-    runCalculator("HowLongUntilSince");
+    runCalculator("HowManyDaysBetween");
   });
 
 /**
@@ -159,7 +159,7 @@ function resetInputsForType(type) {
 
       break;
 
-    case "HowLongUntilSince":
+    case "HowManyDaysBetween":
       document
         .querySelectorAll(".difference")
         .forEach((input) => (input.value = ""));
@@ -187,7 +187,7 @@ function resetInputsForType(type) {
 
       break;
 
-    case "HowLongUntilSince":
+    case "HowManyDaysBetween":
       document.getElementById("eventDatePrompt").classList.remove("hide");
 
       document.getElementById("currentDatePrompt").classList.remove("hide");
@@ -283,7 +283,7 @@ function isValidCalculatorType(type) {
   const validTypes = [
     "HowOldAmIQuestion",
     "WhatYearWasIBorn",
-    "HowLongUntilSince",
+    "HowManyDaysBetween",
   ];
   return validTypes.includes(type);
 }
@@ -326,7 +326,7 @@ function displayQuestion(calculatorType) {
       ageQuestionElement.textContent = "What year was I born?";
       bornResultElement.classList.remove("hide");
       break;
-    case "HowLongUntilSince":
+    case "HowManyDaysBetween":
       ageQuestionElement.textContent = "How many days between?";
       differenceResultElement.classList.remove("hide");
       break;
