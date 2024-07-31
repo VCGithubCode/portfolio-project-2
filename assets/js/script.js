@@ -492,3 +492,20 @@ function calculateDateDifference() {
 
   differenceErrorElement.classList.add("hide");
 }
+
+/**
+ * Checks if the user's selected date is their birthday and displays a birthday message if true.
+ */
+function checkDate() {
+  const currentDate = new Date();
+
+  const userDate = new Date(document.getElementById("userDate").value);
+
+  const isBirthday =
+    currentDate.getDate() === userDate.getDate() &&
+    currentDate.getMonth() === userDate.getMonth();
+
+  if (isBirthday) {
+    document.getElementById("ageQuestion").innerHTML += "<br>Happy Birthday!🥳";
+  }
+}
