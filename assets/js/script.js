@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize the calculator
+  const initialCalculatorType = "HowOldAmIQuestion";
+  runCalculator(initialCalculatorType);
   const modal = document.getElementById("instructionModal");
   const btn = document.getElementById("instructionButton");
   const span = document.querySelector(".close");
