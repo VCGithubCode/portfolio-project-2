@@ -75,14 +75,26 @@ document
     runCalculator("HowLongUntilSince");
   });
 
+/**
+ * Represents the question that displays the difference result.
+ * @type {HTMLElement}
+ */
 const ageResultElement = document.getElementById("question-dob");
 const bornResultElement = document.getElementById("question-born");
 const differenceResultElement = document.getElementById("question-difference");
 
+/**
+ * Represents the error message.
+ * @type {HTMLElement}
+ */
 const ageErrorElement = document.getElementById("ageError");
 const bornErrorElement = document.getElementById("bornError");
 const differenceErrorElement = document.getElementById("differenceError");
 
+/**
+ * Handles the change event of the radio buttons.
+ * Retrieves the selected result type and calls the displayQuestion function.
+ */
 function handleRadioChange() {
   const selectedResultType = document.querySelector(
     'input[name="resultType"]:checked'
@@ -90,6 +102,11 @@ function handleRadioChange() {
   displayQuestion(selectedResultType);
 }
 
+/**
+ * Resets the state of the calculate form.
+ * Hides the "recalculate" button, result, and error messages.
+ * Shows the "calculate" button, input fields, and labels.
+ */
 function resetCalculateState() {
   document
     .querySelectorAll(".calculate")
@@ -128,6 +145,12 @@ function showRecalculateButton() {
     .forEach((result) => result.classList.remove("hide"));
 }
 
+/**
+ * Runs the calculator based on the specified calculator type.
+ * 
+ * @param {string} calculatorType - The type of calculator to run.
+ * @returns {void}
+ */
 function runCalculator(calculatorType) {
   const validCalculatorTypes = [
     "HowOldAmIQuestion",
@@ -155,6 +178,12 @@ function runCalculator(calculatorType) {
   displayQuestion(calculatorType);
 }
 
+/**
+ * Displays a question based on the calculator type.
+ *
+ * @param {string} calculatorType - The type of calculator.
+ * @returns {void}
+ */
 function displayQuestion(calculatorType) {
   const ageQuestionElement = document.getElementById("ageQuestion");
   if (!ageQuestionElement) {
@@ -184,15 +213,25 @@ function displayQuestion(calculatorType) {
   }
 }
 
+/**
+ * Hides the age prompts by adding the "hide" class to the birthDatePrompt element.
+ */
 function hideAgePrompts() {
   document.getElementById("birthDatePrompt").classList.add("hide");
 }
 
+/**
+ * Hides the "born" prompts by adding the "hide" class to the element with the ID "bornPrompt".
+ */
 function hideBornPrompts() {
   document.getElementById("bornPrompt").classList.add("hide");
 }
 
+/**
+ * Hides the difference prompts by adding the "hide" class to their respective elements.
+ */
 function hideDifferencePrompts() {
   document.getElementById("eventDatePrompt").classList.add("hide");
   document.getElementById("currentDatePrompt").classList.add("hide");
 }
+
