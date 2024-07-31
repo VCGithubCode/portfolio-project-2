@@ -30,3 +30,48 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target == modal) modal.style.display = "none";
   }
 });
+
+// Event listeners for radio buttons
+document.querySelectorAll('input[name="resultType"]').forEach((radio) => {
+  radio.addEventListener("change", handleRadioChange);
+});
+
+// Event listeners for calculate and recalculate buttons
+document.getElementById("calculateButtonAge").addEventListener("click", () => {
+  hideAgePrompts();
+  calculateCorrectDOB();
+  showRecalculateButton();
+});
+
+document.getElementById("calculateButtonBorn").addEventListener("click", () => {
+  hideBornPrompts();
+  calculateBornYear();
+  showRecalculateButton();
+});
+
+document
+  .getElementById("calculateButtonDifference")
+  .addEventListener("click", () => {
+    hideDifferencePrompts();
+    calculateDateDifference();
+    showRecalculateButton();
+  });
+
+document
+  .getElementById("recalculateButtonAge")
+  .addEventListener("click", () => {
+    runCalculator("HowOldAmIQuestion");
+  });
+
+document
+  .getElementById("recalculateButtonBorn")
+  .addEventListener("click", () => {
+    runCalculator("WhatYearWasIBorn");
+  });
+
+document
+  .getElementById("recalculateButtonDifference")
+  .addEventListener("click", () => {
+    runCalculator("HowLongUntilSince");
+  });
+
