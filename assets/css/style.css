@@ -43,8 +43,46 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+:root {
+  /* Colors */
+  --primary-color: #201E43;
+  --secondary-color: #134B70;
+  --tertiary-color: #508C9B;
+  --light-color: #EEEEEE;
+  --dark-color: #050505;
+  --transparent-bg-dark: #000000d5;
+  --transparent-bg-light: #eeeeeed5;
+  
+  /* Fonts */
+  --headline-text: 'Proza Libre';
+  --subheader-text: 'Quicksand';
+  --paragraph-text: 'Prompt';
+}
+
+body {
+    background: url(/assets/images/hourglass-freepik.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 75%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--paragraph-text);
+    color: var(--light-color);
+    margin-bottom: 2.4rem;
+    min-height: 100dvh;
+}
+
 main {
   flex: 1 0 auto;
+}
+
+h1 {
+    flex-wrap: wrap;
+    font-family: var(--headline-text);
+    font-size: 2rem;
+    text-align: center;
+    background: #000000e5;
+    padding: 0.4rem;
 }
 
 /* The Modal (background) */
@@ -106,4 +144,37 @@ main {
 }
 
 .interaction {
+    align-items: center;
+    text-align: center;
+    background: #031119d1;
+    margin: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.change {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.error {
+  color: red;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 2.0rem;
+}
+
+
+footer {
+  position: fixed;
+  background: #000000e5;
+  color: #EEEEEE;
+  bottom: 0;
+  width: 100%;
 }
