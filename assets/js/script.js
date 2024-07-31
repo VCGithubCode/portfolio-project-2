@@ -443,9 +443,10 @@ function calculateBornYear() {
 
   const message =
     age > 0
-      ? `If your birthday has passed this year, you were born in ${birthYear}. If you haven't had your birthday yet this year, you were born in ${
-          birthYear - 1
-        }.`
+      ? `If your birthday has passed this year,
+     you were born in ${birthYear}. If you haven't had 
+     your birthday yet this year, you were born in 
+     ${birthYear - 1}.`
       : "Please enter a valid age.";
 
   bornQuestion.textContent = message;
