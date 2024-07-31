@@ -356,3 +356,139 @@ function hideDifferencePrompts() {
   document.getElementById("eventDatePrompt").classList.add("hide");
   document.getElementById("currentDatePrompt").classList.add("hide");
 }
+
+/**
+ * Calculates the correct date of birth based on the user input and displays the age.
+ * @returns {void}
+ */
+function calculateCorrectDOB() {
+  const userDate = document.getElementById("userDate").value;
+
+  // Clear previous error messages
+
+  ageErrorElement.classList.add("hide");
+
+  if (!userDate) {
+    ageErrorElement.textContent = "Please enter your date of birth.";
+
+    ageErrorElement.classList.remove("hide");
+
+    return;
+  }
+
+  const currentDate = new Date();
+
+  const inputDate = new Date(userDate);
+
+  // Check if the input date is in the future
+
+  if (inputDate > currentDate) {
+    ageErrorElement.textContent = "Date of birth cannot be in the future.";
+
+    ageErrorElement.classList.remove("hide");
+
+    return;
+  }
+
+  let ageInYears = currentDate.getFullYear() - inputDate.getFullYear();
+
+  const isBeforeBirthday =
+    currentDate.getMonth() < inputDate.getMonth() ||
+    (currentDate.getMonth() === inputDate.getMonth() &&
+      currentDate.getDate() < inputDate.getDate());
+
+  if (isBeforeBirthday) {
+    ageInYears--;
+  }
+
+  document.getElementById(
+    "ageQuestion"
+  ).textContent = `You are ${ageInYears} years old`;
+
+  checkDate();
+}
+
+function calculateBornYear() {
+  const userAge = document.getElementById("userAge").value;
+
+  const bornQuestion = document.getElementById("bornQuestion");
+
+  if (!userAge) {
+    bornErrorElement.textContent = "Please enter your age.";
+
+    bornErrorElement.classList.remove("hide");
+
+    return;
+  }
+
+  const age = parseInt(userAge, 10);
+
+  if (isNaN(age) || age < 0) {
+    bornErrorElement.textContent = "Please enter a valid age.";
+
+    bornErrorElement.classList.remove("hide");
+
+    return;
+  }
+
+  const currentDate = new Date();
+
+  const currentYear = currentDate.getFullYear();
+
+  // Calculate the approximate birth year
+
+  let birthYear = currentYear - age;
+
+  // Provide a message about the discrepancy
+
+  const message =
+    age > 0
+      ? `If your birthday has passed this year, you were born in ${birthYear}. If you haven't had your birthday yet this year, you were born in ${
+          birthYear - 1
+        }.`
+      : "Please enter a valid age.";
+
+  bornQuestion.textContent = message;
+
+  bornErrorElement.classList.add("hide");
+}
+
+/**
+ * Calculates the difference in days between two dates and updates the question text and result.
+ */
+function calculateDateDifference() {
+  const eventDate = new Date(document.getElementById("eventDate").value);
+
+  const currentDate = new Date(
+    document.getElementById("currentDate").value || Date.now()
+  );
+
+  const timeDifference = eventDate - currentDate;
+
+  if (isNaN(timeDifference)) {
+    differenceErrorElement.textContent =
+      "Please enter the top date. If you do not select a second date, it will default to today's date.";
+
+    differenceErrorElement.classList.remove("hide");
+
+    return;
+  }
+
+  // Get the absolute value of the time difference
+
+  const absoluteTimeDifference = Math.abs(timeDifference);
+
+  const daysDifference = Math.ceil(
+    absoluteTimeDifference / (1000 * 60 * 60 * 24)
+  );
+
+  const dayLabel = daysDifference === 1 ? "day" : "days";
+
+  // Update the question text and result
+
+  document.getElementById(
+    "differenceQuestion"
+  ).textContent = `There are ${daysDifference} ${dayLabel} between ${eventDate.toDateString()} and ${currentDate.toDateString()}.`;
+
+  differenceErrorElement.classList.add("hide");
+}
