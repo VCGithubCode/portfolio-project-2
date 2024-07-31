@@ -152,29 +152,28 @@ function showRecalculateButton() {
  * @returns {void}
  */
 function runCalculator(calculatorType) {
-  const validCalculatorTypes = [
+  const radioInput = document.querySelector(`input[value="${calculatorType}"]`);
+
+  if (!radioInput) {
+    console.error(
+      `Radio button for calculator type ${calculatorType} not found. Aborting!`
+    );
+    return;
+  }
+
+  const validCalculatorTypes = new Set([
     "HowOldAmIQuestion",
     "WhatYearWasIBorn",
     "HowLongUntilSince",
-  ];
+  ]);
 
-  if (!validCalculatorTypes.includes(calculatorType)) {
+  if (!validCalculatorTypes.has(calculatorType)) {
     console.error(`Unknown calculator type: ${calculatorType}. Aborting!`);
     return;
   }
 
   resetCalculateState();
-  const radioInput = document.querySelector(`input[value="${calculatorType}"]`);
-
-  if (radioInput) {
     radioInput.checked = true;
-    displayQuestion(calculatorType);
-  } else {
-    console.error(
-      `Radio button for calculator type ${calculatorType} not found. Aborting!`
-    );
-  }
-
   displayQuestion(calculatorType);
 }
 
