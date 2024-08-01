@@ -18,35 +18,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload Critical CSS -->
-    <style>
-      /* Critical CSS */
-      body {
-        font-family: 'Prompt', sans-serif;
-        background-color: #050505;
-        color: #EEEEEE;
-        font-size: 1.6rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-    </style>
+    <!-- Preload CSS File -->
+    <link rel="preload" href="assets/css/style.css" as="style">
 
-    <!-- Google Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap">
-    </noscript>
+    <!-- Google Fonts (standard link) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
-    <noscript>
-      <link rel="stylesheet" href="assets/css/style.css">
-    </noscript>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Title -->
     <title>Date, Age, and Birth Year Calculator</title>
 </head>
+
 
 <body>
 <!-- Header Content -->
