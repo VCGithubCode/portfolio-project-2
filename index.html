@@ -4,43 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<!-- Meta tags for search engines -->
-    <meta
-      name="description"
-      content="Have you forgotten your age?  The year you were born?  Or simply want to know the difference between two dates?  We've got you covered.">
-    <meta
-      name="keywords"
-      content="how old, dates, calendar, birth year, difference between days, birthdays, events, day, year, calculate age">
 
-<!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png">
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png">
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon-16x16.png">
+    <!-- Meta tags for search engines -->
+    <meta name="description" content="Have you forgotten your age? The year you were born? Or simply want to know the difference between two dates? We've got you covered.">
+    <meta name="keywords" content="how old, dates, calendar, birth year, difference between days, birthdays, events, day, year, calculate age">
 
-<!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Prompt:wght@300;400;500;700&family=Proza+Libre:wght@400;700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<!-- Stylesheet -->
+    <!-- Preload Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Prompt:wght@300;400;500;700&family=Proza+Libre:wght@400;700&family=Quicksand:wght@300..700&display=swap" as="style">
+
+    <!-- Preload CSS File -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-<!-- Title -->
+    <!-- Title -->
     <title>Date, Age, and Birth Year Calculator</title>
-
 </head>
+
 <body>
 <!-- Header Content -->
  <header>
@@ -134,6 +124,6 @@
   </main>
   <!-- Footer Content -->
    <footer>For educational purposes only</footer>
-<script src="assets/js/script.js"></script>
+<script defer src="assets/js/script.js"></script>
 </body>
 </html>

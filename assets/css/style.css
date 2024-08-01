@@ -165,13 +165,108 @@ h1 {
   margin-bottom: 1.6rem;
 }
 
-
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    border-top: solid 2px #baefffb5;
+    border-bottom: 2px solid #baefffb5;
+}
 
 .interaction {
     align-items: center;
     text-align: center;
-    background: #031119d1;
+    background: #050f14d1;
     margin: auto;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+    width: 100%;
+    margin: 0.5rem auto;
+    font-size: calc(1.275rem + .3vw);
+    line-height: inherit;
+    background: #000000d1;
+    padding: 0.5rem;
+}
+
+/* Base style for radio buttons and their labels */
+input[type="radio"] {
+  display: none; /* Hide the default radio button appearance */
+}
+
+/* Style for the selected radio button container */
+input[type="radio"]:checked + label {
+    border: 1.5px solid #034b3ded;
+    box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
+}
+
+/* Style for the checkmark circle */
+label::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden; /* Hidden by default */
+}
+
+/* Show checkmark when the associated radio button is checked */
+input[type="radio"]:checked + label::after {
+  visibility: visible;
+}
+
+label::after {
+  content: '\2713'; /* Unicode checkmark symbol */
+  color: green;
+  font-size: 20px;
+}
+
+.date-question {
+    flex: 1; /* Ensures the container takes up available space */
+  }
+
+  label {
+    display: block;
+    background: #000000e5;
+    color: whitesmoke;
+    border: solid 1.5px silver;
+    border-radius: 24px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    margin: 16px auto;
+    text-align: center;
+}
+
+.label-heading {
+  display: block; /* Ensure block layout for the heading */;
+  font-family: var(--subheader-font);
+  margin-bottom: 1.0rem; /* Adjust margin for spacing */
+  font-size: 2.4rem; /* Adjust font size as needed */
+  font-weight: bold;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+.label-description {
+  display: block; /* Ensure block layout for the description */
+  font-family: var(--paragraph-font);
+  margin: 0; /* Remove default margin */
+  font-size: 1.6rem; /* Adjust font size as needed */
 }
 
 .hide {
