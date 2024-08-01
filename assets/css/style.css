@@ -53,57 +53,62 @@ p, h1, h2, h3, h4, h5, h6 {
   --transparent-bg-light: #eeeeeed5;
   
   /* Fonts */
-  --headline-text: 'Proza Libre';
-  --subheader-text: 'Quicksand';
+  --headline-text: 'Quicksand';
   --paragraph-text: 'Prompt';
 }
 
 body {
-    background: url(../images/hourglass-freepik.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: 75%;
-    text-align: center;
-    font-size: 1.6rem;
-    font-family: var(--paragraph-text);
-    color: var(--light-color);
-    margin-bottom: 2.4rem;
-    min-height: 100dvh;
+  background-color: var(--dark-color);
+  background: url(../images/hourglass-freepik.webp) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: 75%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: var(--paragraph-text);
+  color: var(--light-color);
+  margin-bottom: 2.4rem;
+  min-height: 100dvh;
 }
 
 main {
-  flex: 1 0 auto;
+  flex: 1;
 }
 
 h1 {
-    flex-wrap: wrap;
     font-family: var(--headline-text);
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.8rem;
     background: var(--transparent-bg-dark);
     padding: 0.4rem;
+    margin-bottom: 1.6rem;
+    text-shadow: 1px 1px #0fbef7e0;
 }
 
 #instructionButton,
 .calculate,
 .recalculate {
-    background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
-    margin: 0.5rem auto;
-    padding: 2px;
-    font-size: 1em;
-    color: white;
-    border: solid 1px whitesmoke;
-    border-radius: 8px;
+  background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
+  margin: 0.5rem auto;
+  padding: 2px;
+  font-size: 1em;
+  color: var(--light-color);
+  border: solid 1px var(--light-color);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #instructionButton:hover,
 .calculate:hover,
 .recalculate:hover {
-    background: #000000;
-    color: rgba(230, 228, 228, 0.932);
-    font-size: 1em;
-    box-shadow: 0 0 30px 3px #ffffff;
-    transition: ease-in-out 0.3s;
+  background: var(--dark-color);
+  color: var(--light-color);
+  font-size: 1em;
+  box-shadow: 0 0 30px 3px var(--light-color);
+  transition: ease-in-out 0.3s;
+}
+
+#instructionButton {
+  margin-bottom: 1.6rem;
 }
 
 /* The Modal (background) */
@@ -112,21 +117,23 @@ h1 {
   position: fixed; 
   top: 0;
   left: 0;
-  z-index: 1; 
-  background-color: rgba(0, 0, 0, 0.4); 
-  width: 100%; 
-  height: 100%; 
+  z-index: 1;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
 }
 
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #000000;
+  background-color: var(--dark-color);
   font-size: 1.6rem;
   color: var(--light-text);
   margin: 10% auto; 
   padding: 1.6rem;
-  border: 1px solid #888;
+  border: 1px solid var(--light-color);
   width: 80%; 
   max-height: 80%;
   overflow: auto;
@@ -139,21 +146,20 @@ h1 {
   right: 0.5rem;
   background-color: transparent;
   color: #b6b6b6;
-  font-size: 3.2rem;
+  font-size: 4.8rem;
   font-weight:lighter;
-  text-align: center;
-  line-height: 1.2rem;
+  line-height: 1.8rem;
   border: 1px solid #b6b6b6;
   border-radius: 50%;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
   cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-  color: #ffffff; /* Changes color on hover/focus */
-  border-color: #ffffff; /* Matches border color with text color */
+  color: var(--light-color);
+  border-color: var(--light-color);
   text-decoration: none;
 }
 
@@ -165,21 +171,19 @@ h1 {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin: auto;
-    border-top: solid 2px #baefffb5;
-    border-bottom: 2px solid #baefffb5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  border-top: solid 2px #baefffb5;
+  border-bottom: 2px solid #baefffb5;
 }
 
 .interaction {
-    align-items: center;
-    text-align: center;
-    background: #050f14d1;
-    margin: auto;
+  align-items: center;
+  background: #050f14d1;
+  margin: auto;
 }
 
 fieldset {
@@ -187,12 +191,12 @@ fieldset {
 }
 
 legend {
-    width: 100%;
-    margin: 0.5rem auto;
-    font-size: calc(1.275rem + .3vw);
-    line-height: inherit;
-    background: #000000d1;
-    padding: 0.5rem;
+  width: 100%;
+  margin: 0.5rem auto;
+  font-size: calc(1.275rem + .3vw);
+  line-height: inherit;
+  background: #000000d1;
+  padding: 0.5rem;
 }
 
 /* Base style for radio buttons and their labels */
@@ -202,20 +206,50 @@ input[type="radio"] {
 
 /* Style for the selected radio button container */
 input[type="radio"]:checked + label {
-    border: 1.5px solid #034b3ded;
-    box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
+  border: 4px solid #00624ff4;
+  box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
+}
+
+label {
+  display: block;
+  background: var(--transparent-bg-dark);    color: var(--light-color);
+  border: solid 1px #9191918c;
+  border-radius: 24px;
+  padding: 11px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  margin: 16px auto;
+}
+
+.label-heading {
+    display: block;
+    font-family: var(--headline-text);
+    margin: 1.6rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-shadow: 1px 1px #0fbef7e0;
+}
+
+.label-description {
+  display: block; /* Ensure block layout for the description */
+  font-family: var(--paragraph-text);
+  margin: 0; /* Remove default margin */
+  font-size: 1.6rem; /* Adjust font size as needed */
 }
 
 /* Style for the checkmark circle */
 label::after {
   content: '';
-  position: absolute;
-  left: 30px;
+  position: relative;
+  left: -2rem;
+  bottom: -2rem;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   background-color: white;
-  border: 2px solid green;
+  border: 2px solid rgb(54, 198, 54);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,45 +269,33 @@ label::after {
 
 .date-question {
     flex: 1; /* Ensures the container takes up available space */
+    cursor: pointer;
   }
-
-  label {
-    display: block;
-    background: #000000e5;
-    color: whitesmoke;
-    border: solid 1.5px silver;
-    border-radius: 24px;
-    padding: 20px;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 400px;
-    margin: 16px auto;
-    text-align: center;
-}
-
-.label-heading {
-  display: block; /* Ensure block layout for the heading */;
-  font-family: var(--subheader-font);
-  margin-bottom: 1.0rem; /* Adjust margin for spacing */
-  font-size: 2.4rem; /* Adjust font size as needed */
-  font-weight: bold;
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-
-.label-description {
-  display: block; /* Ensure block layout for the description */
-  font-family: var(--paragraph-font);
-  margin: 0; /* Remove default margin */
-  font-size: 1.6rem; /* Adjust font size as needed */
-}
 
 .hide {
   display: none;
 }
 
 .change {
+  background: var(--transparent-bg-dark);
   animation: fadeIn 2s;
+  font-family: var(--headline-text);
+  color: whitesmoke;
+  width: 100%;
+  max-width: 775px;
+  border: solid 1px silver;
+  border-radius: 4px;
+  box-shadow: 1px 1px 15px #eeeeee;
+}
+
+.ageQuestion {
+  margin-top: 0.8rem;
+}
+
+.ageQuestion h2 {
+  margin-top: 2rem;
+  text-shadow: 1px 1px #0fbef7e0;
+
 }
 
 @keyframes fadeIn {
