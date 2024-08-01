@@ -212,7 +212,8 @@ input[type="radio"]:checked + label {
 
 label {
   display: block;
-  background: var(--transparent-bg-dark);    color: var(--light-color);
+  background: var(--transparent-bg-dark);
+  color: var(--light-color);
   border: solid 1px #9191918c;
   border-radius: 24px;
   padding: 11px;
@@ -233,10 +234,10 @@ label {
 }
 
 .label-description {
-  display: block; /* Ensure block layout for the description */
+  display: block;
   font-family: var(--paragraph-text);
-  margin: 0; /* Remove default margin */
-  font-size: 1.6rem; /* Adjust font size as needed */
+  margin: 0;
+  font-size: 1.6rem;
 }
 
 /* Style for the checkmark circle */
@@ -253,7 +254,7 @@ label::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  visibility: hidden; /* Hidden by default */
+  visibility: hidden;
 }
 
 /* Show checkmark when the associated radio button is checked */
@@ -268,9 +269,9 @@ label::after {
 }
 
 .date-question {
-    flex: 1; /* Ensures the container takes up available space */
-    cursor: pointer;
-  }
+  flex: 1;
+  cursor: pointer;
+}
 
 .hide {
   display: none;
