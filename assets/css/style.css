@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap');
-/*-- Root Font Size--*/
-
-/* Set to make rem values more clear (1.6rem = 16px) */
+/* Root Font Size */
 html {
-font-size: 62.5%;
+  font-size: 62.5%;
 }
 
+/* Base Styles */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -19,6 +17,15 @@ body {
   min-height: 100svh;
   line-height: 2.4rem;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--dark-color);
+  background: url(../images/hourglass-freepik.webp) no-repeat center center;
+  background-position: fixed;
+  background-size: cover; /* Adjust as needed */
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: var(--paragraph-text);
+  color: var(--light-color);
+  margin-bottom: 2.4rem;
 }
 
 img, picture, video, canvas, svg {
@@ -32,7 +39,7 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
-  -webkit-hyphens : auto;
+  -webkit-hyphens: auto;
   hyphens: auto;
   text-wrap: pretty;
 }
@@ -53,22 +60,8 @@ p, h1, h2, h3, h4, h5, h6 {
   --transparent-bg-light: #eeeeeed5;
   
   /* Fonts */
-  --headline-text: 'Quicksand';
-  --paragraph-text: 'Prompt';
-}
-
-body {
-  background-color: var(--dark-color);
-  background: url(../images/hourglass-freepik.webp) no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position-x: 75%;
-  text-align: center;
-  font-size: 1.6rem;
-  font-family: var(--paragraph-text);
-  color: var(--light-color);
-  margin-bottom: 2.4rem;
-  min-height: 100dvh;
+  --headline-text: 'Quicksand', sans-serif;
+  --paragraph-text: 'Prompt', sans-serif;
 }
 
 main {
@@ -82,6 +75,7 @@ h1 {
     padding: 0.4rem;
     margin-bottom: 1.6rem;
     text-shadow: 1px 1px #0fbef7e0;
+    box-shadow: 1px 1px 15px #eeeeee;
 }
 
 #instructionButton,
@@ -130,10 +124,11 @@ h1 {
   position: relative;
   background-color: var(--dark-color);
   font-size: 1.6rem;
-  color: var(--light-text);
+  color: var(--light-color);
   margin: 10% auto; 
   padding: 1.6rem;
   border: 1px solid var(--light-color);
+  height: min-content;
   width: 80%; 
   max-height: 80%;
   overflow: auto;
@@ -142,17 +137,17 @@ h1 {
 /* The Modal Close Button */
 .close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.4rem;
+  right: 0.4rem;
   background-color: transparent;
   color: #b6b6b6;
   font-size: 4.8rem;
   font-weight:lighter;
-  line-height: 1.8rem;
+  line-height: 1.6rem;
   border: 1px solid #b6b6b6;
   border-radius: 50%;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
   cursor: pointer;
 }
 
@@ -160,14 +155,13 @@ h1 {
 .close:focus {
   color: var(--light-color);
   border-color: var(--light-color);
-  text-decoration: none;
 }
 
 .modal h2 {
   font-size: 2rem;
   border: transparent;
-  text-decoration: underline;
   margin-bottom: 1.6rem;
+  text-shadow: 1px 1px #0fbef7e0;
 }
 
 .container {
@@ -240,7 +234,7 @@ label {
   font-size: 1.6rem;
 }
 
-/* Style for the checkmark circle */
+/* Style for the check-mark circle */
 label::after {
   content: '';
   position: relative;
@@ -257,15 +251,16 @@ label::after {
   visibility: hidden;
 }
 
-/* Show checkmark when the associated radio button is checked */
+/* Show check-mark when the associated radio button is checked */
 input[type="radio"]:checked + label::after {
   visibility: visible;
 }
 
 label::after {
-  content: '\2713'; /* Unicode checkmark symbol */
+  content: '\2713'; /* Unicode check-mark symbol */
   color: green;
-  font-size: 20px;
+  font-size: 3.2rem;
+  font-weight: bolder;
 }
 
 .date-question {
@@ -277,13 +272,16 @@ label::after {
   display: none;
 }
 
+.radio-questions .label-description {
+  font-size: 1.6rem;
+}
+
 .change {
   background: var(--transparent-bg-dark);
   animation: fadeIn 2s;
   font-family: var(--headline-text);
   color: whitesmoke;
   width: 100%;
-  max-width: 775px;
   border: solid 1px silver;
   border-radius: 4px;
   box-shadow: 1px 1px 15px #eeeeee;
@@ -296,7 +294,12 @@ label::after {
 .ageQuestion h2 {
   margin-top: 2rem;
   text-shadow: 1px 1px #0fbef7e0;
+}
 
+fieldset,
+.change {
+  min-width: 95%;
+  max-width: 775px;
 }
 
 @keyframes fadeIn {
@@ -311,11 +314,124 @@ label::after {
   margin-bottom: 2.0rem;
 }
 
-
 footer {
   position: fixed;
   background: #000000e5;
   color: #EEEEEE;
   bottom: 0;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+h1 {
+    font-family: var(--headline-text);
+    font-size: 3.2rem;
+    background: var(--transparent-bg-dark);
+    padding: 2rem;
+    margin-bottom: 1.6rem;
+    text-shadow: 1px 1px #0fbef7e0;
+}
+
+.radio-questions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
+  gap: 10px;
+}
+
+.radio-questions > div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 5px;
+  min-height: 200px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.radio-questions input[type="radio"] {
+  margin-bottom: 10px;
+}
+
+.radio-questions label {
+  display: block;
+  font-size: 16px;
+}
+
+.radio-questions .label-heading,
+.radio-questions .label-description {
+  margin: 21px auto;
+}
+
+.radio-questions .label-description {
+  margin-top: 5px;
+}
+
+.change {
+    min-height: 518px;
+}
+
+}
+
+/* Media query for tall screens (height >= 871px) */
+@media screen and (min-width: 500px) and (min-height: 871px) {
+  #instructionButton, .calculate, .recalculate {
+    background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
+    margin: 0.5rem auto;
+    padding: 1em;
+    font-size: 1.6em;
+    color: var(--light-color);
+    border: solid 1px var(--light-color);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .container {
+    min-height: 100vh;
+  }
+
+  .radio-questions .label-description {
+    margin-top: 5px;
+    font-size: 2.8rem;
+    height: 16.0rem;
+    }
+
+    .label-heading {
+        font-size: 3.7rem;
+        height: 50px;
+        line-height: 37px;
+    }
+    .label-description {
+    font-size: 3.2rem;
+    line-height: 1.6;
+  }
+
+  .label.prompt {
+    margin: 4.8rem auto;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    min-width: 50%;
+  }
+
+  label::after {
+    left: -2.5rem;
+    bottom: -2rem;
+  }
+
+    .ageQuestion h2 {
+        margin-top: 4.8rem;
+        text-shadow: 1px 1px #0fbef7e0;
+        font-size: 3.75rem;
+        line-height: 8.0rem;
+    }
+
+    .error {
+    color: red;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 2.0rem;
+    line-height: 8rem;
+}
 }
