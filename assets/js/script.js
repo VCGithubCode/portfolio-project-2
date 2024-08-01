@@ -454,43 +454,46 @@ function calculateBornYear() {
   bornErrorElement.classList.add("hide");
 }
 
+
 /**
- * Calculates the difference in days between two dates and updates the question text and result.
+ * Calculates the difference in days between two dates and updates the result on the page.
+ * @returns {void}
  */
 function calculateDateDifference() {
-  const eventDate = new Date(document.getElementById("eventDate").value);
+  const eventDateInput = document.getElementById("eventDate").value;
+  const currentDateInput = document.getElementById("currentDate").value;
 
-  const currentDate = new Date(
-    document.getElementById("currentDate").value || Date.now()
-  );
+  // Create Date objects from the input values
+  const eventDate = new Date(eventDateInput);
+  const currentDate = new Date(currentDateInput || Date.now());
 
-  const timeDifference = eventDate - currentDate;
-
-  if (isNaN(timeDifference)) {
+  // Validate dates
+  if (isNaN(eventDate.getTime()) || isNaN(currentDate.getTime())) {
     differenceErrorElement.textContent =
-      "Please enter the top date. If you do not select a second date, it will default to today's date.";
-
+      "Please enter valid dates. If no second date is selected, it will default to today's date.";
     differenceErrorElement.classList.remove("hide");
-
     return;
   }
 
-  // Get the absolute value of the time difference
+  // Calculate the difference in time
+  const timeDifference = Math.abs(eventDate - currentDate);
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-  const absoluteTimeDifference = Math.abs(timeDifference);
-
-  const daysDifference = Math.ceil(
-    absoluteTimeDifference / (1000 * 60 * 60 * 24)
-  );
-
+  // Determine the singular or plural form
   const dayLabel = daysDifference === 1 ? "day" : "days";
 
+  // Adjust text for zero days
+  const resultText =
+    daysDifference === 0
+      ? "There are no days between the dates."
+      : `There ${
+          daysDifference === 1 ? "is" : "are"
+        } ${daysDifference} ${dayLabel} between ${eventDate.toDateString()} and ${currentDate.toDateString()}.`;
+
   // Update the question text and result
+  document.getElementById("differenceQuestion").textContent = resultText;
 
-  document.getElementById(
-    "differenceQuestion"
-  ).textContent = `There are ${daysDifference} ${dayLabel} between ${eventDate.toDateString()} and ${currentDate.toDateString()}.`;
-
+  // Hide error message if no errors
   differenceErrorElement.classList.add("hide");
 }
 
