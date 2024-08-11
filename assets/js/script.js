@@ -34,10 +34,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Event listeners for radio buttons
-document.querySelectorAll('input[name="resultType"]').forEach((radio) => {
-  radio.addEventListener("change", handleRadioChange);
-});
+  // Event listeners for radio buttons
+  document.querySelectorAll('input[name="resultType"]').forEach((radio) => {
+    radio.addEventListener("change", handleRadioChange);
+
+    // Add keyboard event handling for Enter key
+    radio.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        radio.click();
+      }
+    });
+  });
+
+  // Event listeners for labels
+  document.querySelectorAll('label.date-question').forEach((label) => {
+    label.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const associatedRadio = document.getElementById(label.htmlFor);
+        if (associatedRadio) {
+          associatedRadio.click();
+        }
+      }
+    });
+  });
 
 // Event listeners for calculate and recalculate buttons
 document.getElementById("calculateButtonAge").addEventListener("click", () => {
