@@ -122,8 +122,7 @@ const differenceResultElement = document.getElementById("question-difference");
  * Represents the error message.
  * @type {HTMLElement}
  */
-const ageErrorElement = document.getElementById("ageError");
-const bornErrorElement = document.getElementById("bornError");
+
 const differenceErrorElement = document.getElementById("differenceError");
 const defaultMessages = {
   age: "How old am I?",
@@ -524,8 +523,7 @@ function calculateDateDifference() {
 
   // Adjust text for zero days
   const resultText =
-    daysDifference === 0
-      ? "There are no days between the dates."
+    daysDifference === 0 ? "There are no days between the dates."
       : `There ${
           daysDifference === 1 ? "is" : "are"
         } ${daysDifference} ${dayLabel} between ${eventDate.toDateString()} and ${currentDate.toDateString()}.`;
