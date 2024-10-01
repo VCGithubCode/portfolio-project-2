@@ -97,6 +97,7 @@
         </fieldset>
 
         <!-- Age Question -->
+        <form onsubmit="return false">
         <div class="ageQuestion change" id="question-dob">
           <h2 id="ageQuestion">How old am I?</h2>
           <label class="label prompt" id="birthDatePrompt">Please enter your date of birth:
@@ -106,8 +107,8 @@
           <br>
           <p class="result hide" id="ageResult"></p>
           <p class="error hide" id="ageError"></p>
-          <button class="calculate" id="calculateButtonAge">Calculate</button>
-          <button class="recalculate hide" id="recalculateButtonAge">Recalculate</button>
+            <button type="button" class="calculate" id="calculateButtonAge">Calculate</button>
+            <button type="button" class="recalculate hide" id="recalculateButtonAge">Recalculate</button>
         </div>
 
         <!-- Birth year Question -->
@@ -120,8 +121,8 @@
           <br>
           <p class="result hide" id="bornResult"></p>
           <p class="error hide" id="bornError"></p>
-          <button class="calculate" id="calculateButtonBorn">Calculate</button>
-          <button class="recalculate hide" id="recalculateButtonBorn">Recalculate</button>
+            <button type="button" class="calculate" id="calculateButtonBorn">Calculate</button>
+            <button type="button" class="recalculate hide" id="recalculateButtonBorn">Recalculate</button>
         </div>
 
         <!-- Date Difference -->
@@ -140,9 +141,10 @@
           <br>
           <p class="result hide" id="differenceResult"></p>
           <p class="error hide" id="differenceError"></p>
-          <button class="calculate" id="calculateButtonDifference">Calculate</button>
-          <button class="recalculate hide" id="recalculateButtonDifference">Recalculate</button>
+            <button type="button" class="calculate" id="calculateButtonDifference">Calculate</button>
+            <button type="button" class="recalculate hide" id="recalculateButtonDifference">Recalculate</button>
         </div>
+        </form>
       </div>
     </div>
   </main>
