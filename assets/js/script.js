@@ -12,28 +12,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("instructionModal");
   const btn = document.getElementById("instructionButton");
-  const span = document.querySelector(".close");
+  const closeBtn = document.querySelector(".close");
 
+  // Open the modal when clicking the "Show Instructions" button
   btn.addEventListener("click", toggleModal);
-  span.addEventListener("click", closeModal);
-  window.addEventListener("click", outsideClick);
 
-  // Open the modal
+  // Close the modal when clicking on the (x)
+  closeBtn.addEventListener("click", closeModal);
+
+  // Close the modal when pressing Enter or Space while focused on the (x)
+  closeBtn.addEventListener("keydown", function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault(); // Prevent default space bar scrolling
+      closeModal(); // Call the closeModal function
+    }
+  });
+
+  // Close the modal when clicking outside of the modal content
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Function to open the modal
   function toggleModal() {
     modal.style.display = "flex";
   }
 
-  // Close the modal when clicking on (x)
+  // Function to close the modal
   function closeModal() {
     modal.style.display = "none";
   }
-
-  // Close the modal when clicking outside of the modal content
-  function outsideClick(e) {
-    if (e.target == modal) modal.style.display = "none";
-  }
 });
-
   // Event listeners for radio buttons
   document.querySelectorAll('input[name="resultType"]').forEach((radio) => {
     radio.addEventListener("change", handleRadioChange);
