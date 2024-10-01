@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.addEventListener("keydown", function(event) {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault(); // Prevent default space bar scrolling
-      closeModal(); // Call the closeModal function
+      closeModal();
     }
   });
 
@@ -395,30 +395,36 @@ function hideDifferencePrompts() {
  */
 function calculateCorrectDOB() {
   const userDate = document.getElementById("userDate").value;
+  const ageErrorElement = document.getElementById("ageError");
 
   // Clear previous error messages
-
   ageErrorElement.classList.add("hide");
+  ageErrorElement.textContent = ""; // Clear the error message text
 
+  // Validate if a date is entered
   if (!userDate) {
     ageErrorElement.textContent = "Please enter your date of birth.";
-
     ageErrorElement.classList.remove("hide");
-
     return;
   }
 
   const currentDate = new Date();
-
   const inputDate = new Date(userDate);
 
   // Check if the input date is in the future
-
   if (inputDate > currentDate) {
     ageErrorElement.textContent = "Date of birth cannot be in the future.";
-
     ageErrorElement.classList.remove("hide");
+    return;
+  }
 
+  // Check if the date of birth is more than 130 years ago
+  const maxPastDate = new Date();
+  maxPastDate.setFullYear(currentDate.getFullYear() - 130);
+  
+  if (inputDate < maxPastDate) {
+    ageErrorElement.textContent = "Date of birth cannot be more than 130 years ago.";
+    ageErrorElement.classList.remove("hide");
     return;
   }
 
@@ -429,60 +435,62 @@ function calculateCorrectDOB() {
     (currentDate.getMonth() === inputDate.getMonth() &&
       currentDate.getDate() < inputDate.getDate());
 
+  // If the current date is before the user's birthday this year, subtract 1 from age
   if (isBeforeBirthday) {
     ageInYears--;
   }
 
-  document.getElementById(
-    "ageQuestion"
-  ).textContent = `You are ${ageInYears} years old`;
+  document.getElementById("ageQuestion").textContent = `You are ${ageInYears} years old`;
 
+  // Call checkDate() to perform any additional validations
   checkDate();
 }
 
+
 function calculateBornYear() {
   const userAge = document.getElementById("userAge").value;
-
+  const bornErrorElement = document.getElementById("bornError");
   const bornQuestion = document.getElementById("bornQuestion");
 
+  // Clear previous error messages
+  bornErrorElement.classList.add("hide");
+  bornErrorElement.textContent = ""; // Clear any previous error messages
+
+  // Check if age is provided
   if (!userAge) {
     bornErrorElement.textContent = "Please enter your age.";
-
     bornErrorElement.classList.remove("hide");
-
     return;
   }
 
   const age = parseInt(userAge, 10);
 
-  if (isNaN(age) || age < 0) {
-    bornErrorElement.textContent = "Please enter a valid age.";
-
+  // Validate the age (it should be a valid number and non-negative)
+  if (isNaN(age) || age < 0 || age > 130) {
+    bornErrorElement.textContent = "Please enter a valid age in years between 0 and 130.";
     bornErrorElement.classList.remove("hide");
-
     return;
   }
 
   const currentDate = new Date();
-
   const currentYear = currentDate.getFullYear();
 
-  // Calculate the approximate birth year
-
+  // Calculate approximate birth year
   let birthYear = currentYear - age;
 
-  // Provide a message about the discrepancy
+  // Check if the user's birthday has passed this year
+  const hasHadBirthdayThisYear = (currentDate.getMonth() > 0) || (currentDate.getMonth() === 0 && currentDate.getDate() >= 1);
 
-  const message =
-    age > 0
-      ? `If your birthday has passed this year,
-     you were born in ${birthYear}. If you haven't had 
-     your birthday yet this year, you were born in 
-     ${birthYear - 1}.`
-      : "Please enter a valid age.";
+  // If the user's birthday hasn't occurred yet this year, subtract one more year
+  if (!hasHadBirthdayThisYear) {
+    birthYear -= 1;
+  }
 
+  // Provide feedback based on whether their birthday has passed
+  const message = `If your birthday has passed this year, you were born in ${birthYear}. If you haven't had your birthday yet, you were born in ${birthYear + 1}.`;
+
+  // Display the message and hide any previous errors
   bornQuestion.textContent = message;
-
   bornErrorElement.classList.add("hide");
 }
 
