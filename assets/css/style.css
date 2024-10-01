@@ -89,6 +89,7 @@ h1 {
   border: solid 1px var(--light-color);
   border-radius: 8px;
   cursor: pointer;
+  transition: ease-in-out 0.3s;
 }
 
 #instructionButton:hover,
@@ -96,9 +97,7 @@ h1 {
 .recalculate:hover {
   background: var(--dark-color);
   color: var(--light-color);
-  font-size: 1em;
   box-shadow: 0 0 30px 3px var(--light-color);
-  transition: ease-in-out 0.3s;
 }
 
 #instructionButton {

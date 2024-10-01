@@ -58,12 +58,12 @@
           want to use, and the appropriate fields will be displayed for you to input your data. Then, click the
           calculate button to see your results. You can then click on the recalculate button that appears if you wish to
           reenter your data.</p>
-        </div>
+      </div>
     </div>
-    </header>
+  </header>
 
-    <!-- Main Content -->
-    <main>
+  <!-- Main Content -->
+  <main>
     <div class="interaction">
       <div class="container">
         <fieldset>
@@ -76,74 +76,74 @@
                 <span class="label-heading">Age</span>
                 <span class="label-description">How old am I?</span>
               </label>
-              </div>
-              <div>
-                <input type="radio" id="bornRadio" name="resultType" value="WhatYearWasIBorn" class="question"
-                  data-type="WhatYearWasIBorn">
-                <label class="date-question" for="bornRadio" tabindex="0">
-                  <span class="label-heading">Birth year</span>
-                  <span class="label-description">What year was I born?</span>
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="differenceRadio" name="resultType" value="HowManyDaysBetween" class="question"
-                  data-type="HowManyDaysBetween">
-                <label class="date-question" for="differenceRadio" tabindex="0">
-                  <span class="label-heading">Date Difference</span>
-                  <span class="label-description">How many days between?</span>
-                </label>
-              </div>
-              </div>
+            </div>
+            <div>
+              <input type="radio" id="bornRadio" name="resultType" value="WhatYearWasIBorn" class="question"
+                data-type="WhatYearWasIBorn">
+              <label class="date-question" for="bornRadio" tabindex="0">
+                <span class="label-heading">Birth year</span>
+                <span class="label-description">What year was I born?</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="differenceRadio" name="resultType" value="HowManyDaysBetween" class="question"
+                data-type="HowManyDaysBetween">
+              <label class="date-question" for="differenceRadio" tabindex="0">
+                <span class="label-heading">Date Difference</span>
+                <span class="label-description">How many days between?</span>
+              </label>
+            </div>
+            </div>
         </fieldset>
 
         <!-- Age Question -->
         <form onsubmit="return false">
-        <div class="ageQuestion change" id="question-dob">
-          <h2 id="ageQuestion">How old am I?</h2>
-          <label class="label prompt" id="birthDatePrompt">Please enter your date of birth:
+          <div class="ageQuestion change" id="question-dob">
+            <h2 id="ageQuestion">How old am I?</h2>
+            <label class="label prompt" id="birthDatePrompt">Please enter your date of birth:
+              <br>
+              <input class="dob" type="date" id="userDate">
+            </label>
             <br>
-            <input class="dob" type="date" id="userDate">
-          </label>
-          <br>
-          <p class="result hide" id="ageResult"></p>
-          <p class="error hide" id="ageError"></p>
+            <p class="result hide" id="ageResult"></p>
+            <p class="error hide" id="ageError"></p>
             <button type="button" class="calculate" id="calculateButtonAge">Calculate</button>
             <button type="button" class="recalculate hide" id="recalculateButtonAge">Recalculate</button>
-        </div>
+            </div>
 
-        <!-- Birth year Question -->
-        <div class="ageQuestion hide change" id="question-born">
-          <h2 id="bornQuestion">What year was I born?</h2>
-          <label class="label prompt" id="bornPrompt">Please enter your age in years:
+          <!-- Birth year Question -->
+          <div class="ageQuestion hide change" id="question-born">
+            <h2 id="bornQuestion">What year was I born?</h2>
+            <label class="label prompt" id="bornPrompt">Please enter your age in years:
+              <br>
+              <input class="years" type="number" id="userAge" placeholder="Enter a number">
+            </label>
             <br>
-            <input class="years" type="number" id="userAge" placeholder="Enter a number">
-          </label>
-          <br>
-          <p class="result hide" id="bornResult"></p>
-          <p class="error hide" id="bornError"></p>
+            <p class="result hide" id="bornResult"></p>
+            <p class="error hide" id="bornError"></p>
             <button type="button" class="calculate" id="calculateButtonBorn">Calculate</button>
             <button type="button" class="recalculate hide" id="recalculateButtonBorn">Recalculate</button>
-        </div>
+            </div>
 
-        <!-- Date Difference -->
-        <div class="ageQuestion hide change" id="question-difference">
-          <h2 id="differenceQuestion">How many days between?</h2>
-          <label class="label prompt" id="eventDatePrompt">Please enter a date:
+          <!-- Date Difference -->
+          <div class="ageQuestion hide change" id="question-difference">
+            <h2 id="differenceQuestion">How many days between?</h2>
+            <label class="label prompt" id="eventDatePrompt">Please enter a date:
+              <br>
+              <input class="difference" type="date" id="eventDate">
+            </label>
             <br>
-            <input class="difference" type="date" id="eventDate">
-          </label>
-          <br>
-          <label class="label prompt" id="currentDatePrompt">Please enter another date to see how many days there are
-            between them:
+            <label class="label prompt" id="currentDatePrompt">Please enter another date to see how many days there are
+              between them:
+              <br>
+              <input class="difference" type="date" id="currentDate">
+            </label>
             <br>
-            <input class="difference" type="date" id="currentDate">
-          </label>
-          <br>
-          <p class="result hide" id="differenceResult"></p>
-          <p class="error hide" id="differenceError"></p>
+            <p class="result hide" id="differenceResult"></p>
+            <p class="error hide" id="differenceError"></p>
             <button type="button" class="calculate" id="calculateButtonDifference">Calculate</button>
             <button type="button" class="recalculate hide" id="recalculateButtonDifference">Recalculate</button>
-        </div>
+            </div>
         </form>
       </div>
     </div>
