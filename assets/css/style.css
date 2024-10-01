@@ -156,6 +156,11 @@ h1 {
   border-color: var(--light-color);
 }
 
+.close:focus-visible {
+  outline: 4px solid #ffffff;
+}
+
+
 .modal h2 {
   font-size: 2rem;
   border: transparent;
@@ -202,6 +207,7 @@ input[type="radio"]:checked + label,
 input[type="radio"]:focus + label {
   border: 4px solid #00624ff4; /* Border color for checked/focused state */
   box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
+  outline: 1px solid #ffffff  ;
 }
 
 input[type="date"],
