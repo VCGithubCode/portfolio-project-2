@@ -14,12 +14,11 @@ html {
 }
 
 body {
-  min-height: 100svh;
+  min-height: 100dvh;
   line-height: 2.4rem;
   -webkit-font-smoothing: antialiased;
   background-color: var(--dark-color);
-  background: url(../images/hourglass-freepik.webp) no-repeat center center;
-  background-position: fixed;
+  background: url(../images/hourglass-freepik.webp) no-repeat center;
   background-size: cover;
   text-align: center;
   font-size: 1.6rem;
@@ -41,7 +40,7 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
   hyphens: auto;
-  text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 #root, #__next {
@@ -212,7 +211,7 @@ input[type="radio"]:focus + label {
 
 input[type="date"],
 input[type="number"] {
-    font: inherit;
+    font: inherit;  
     border: 4px solid rgb(55, 99, 147);
     padding: 1rem;
     color: var(--dark-color);
@@ -305,6 +304,10 @@ label::after {
   font-size: 1.6rem;
 }
 
+form {
+  width: 100%;
+}
+
 .change {
   background: var(--transparent-bg-dark);
   animation: fadeIn 2s;
@@ -328,7 +331,8 @@ label::after {
 fieldset,
 .change {
   min-width: 95%;
-  max-width: 775px;
+  max-width: 1024px;
+  margin: 1px auto;
 }
 
 @keyframes fadeIn {
