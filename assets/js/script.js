@@ -389,7 +389,7 @@ function hideDifferencePrompts() {
 }
 
 /**
- * Calculates the correct date of birth based on the user input and displays the age.
+ * Calculates the correct date of birth based on the user input and displays the age in years, months, days, hours, minutes, and seconds with correct grammar.
  * @returns {void} This function does not return a value.
  */
 function calculateCorrectDOB() {
@@ -420,30 +420,65 @@ function calculateCorrectDOB() {
   // Check if the date of birth is more than 130 years ago
   const maxPastDate = new Date();
   maxPastDate.setFullYear(currentDate.getFullYear() - 130);
-  
+
   if (inputDate < maxPastDate) {
     ageErrorElement.textContent = "Date of birth cannot be more than 130 years ago.";
     ageErrorElement.classList.remove("hide");
     return;
   }
 
+  // Calculate the difference in years, months, days, etc.
   let ageInYears = currentDate.getFullYear() - inputDate.getFullYear();
+  let ageInMonths = currentDate.getMonth() - inputDate.getMonth();
+  let ageInDays = currentDate.getDate() - inputDate.getDate();
+  let ageInHours = currentDate.getHours() - inputDate.getHours();
+  let ageInMinutes = currentDate.getMinutes() - inputDate.getMinutes();
+  let ageInSeconds = currentDate.getSeconds() - inputDate.getSeconds();
 
-  const isBeforeBirthday =
-    currentDate.getMonth() < inputDate.getMonth() ||
-    (currentDate.getMonth() === inputDate.getMonth() &&
-      currentDate.getDate() < inputDate.getDate());
-
-  // If the current date is before the user's birthday this year, subtract 1 from age
-  if (isBeforeBirthday) {
-    ageInYears--;
+  // Adjust for negative values (e.g., when the current day/month is earlier than the birth date)
+  if (ageInSeconds < 0) {
+    ageInMinutes--;
+    ageInSeconds += 60;
   }
 
-  document.getElementById("ageQuestion").textContent = `You are ${ageInYears} years old`;
+  if (ageInMinutes < 0) {
+    ageInHours--;
+    ageInMinutes += 60;
+  }
 
-  // Call checkDate() to perform any additional validations
+  if (ageInHours < 0) {
+    ageInDays--;
+    ageInHours += 24;
+  }
+
+  if (ageInDays < 0) {
+    ageInMonths--;
+    // Calculate the days in the previous month to adjust
+    const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+    ageInDays += previousMonth.getDate();
+  }
+
+  if (ageInMonths < 0) {
+    ageInYears--;
+    ageInMonths += 12;
+  }
+
+  // Helper function to return correct singular/plural form
+  function formatUnit(value, unit) {
+    return `${value} ${unit}${value === 1 ? '' : 's'}`;
+  }
+
+  // Display the detailed age breakdown with correct grammar
+  const ageDetailMessage = `
+    You are ${formatUnit(ageInYears, 'year')}, ${formatUnit(ageInMonths, 'month')}, ${formatUnit(ageInDays, 'day')},
+    ${formatUnit(ageInHours, 'hour')}, ${formatUnit(ageInMinutes, 'minute')}, and ${formatUnit(ageInSeconds, 'second')} old.
+  `;
+  document.getElementById("ageQuestion").textContent = ageDetailMessage;
+
+  // Call checkDate() to perform any additional validations (if necessary)
   checkDate();
 }
+
 
 
 function calculateBornYear() {
