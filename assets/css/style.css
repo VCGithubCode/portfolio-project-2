@@ -36,13 +36,6 @@ input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
-
 #root, #__next {
   height: 100%;
   isolation: isolate;
@@ -172,15 +165,12 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: auto;
-  border-top: solid 2px #baefffb5;
-  border-bottom: 2px solid #baefffb5;
 }
 
 .interaction {
-  align-items: center;
   background: #050f14d1;
-  margin: auto;
+  border-top: solid 2px #baefffb5;
+  border-bottom: 2px solid #baefffb5;
 }
 
 fieldset {
@@ -328,11 +318,11 @@ form {
   text-shadow: 1px 1px #0fbef7e0;
 }
 
-fieldset,
-.change {
+fieldset {
   min-width: 95%;
   max-width: 1024px;
   margin: 1px auto;
+  min-height: 100%;
 }
 
 @keyframes fadeIn {
@@ -375,7 +365,6 @@ h1 {
 .radio-questions > div {
   display: flex;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
   padding: 0;
   border-radius: 5px;
@@ -402,10 +391,10 @@ h1 {
   margin-top: 5px;
 }
 
-.change {
-    min-height: 518px;
 }
 
+.change {
+  min-height: 518px;
 }
 
 /* Media query for tall screens (height >= 871px) */
