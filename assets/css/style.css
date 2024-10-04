@@ -4,7 +4,9 @@ html {
 }
 
 /* Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -27,16 +29,24 @@ body {
   margin-bottom: 2.4rem;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-#root, #__next {
+#root,
+#__next {
   height: 100%;
   isolation: isolate;
 }
@@ -50,7 +60,7 @@ input, button, textarea, select {
   --dark-color: #050505;
   --transparent-bg-dark: #000000d5;
   --transparent-bg-light: #eeeeeed5;
-  
+
   /* Fonts */
   --headline-text: 'Quicksand', sans-serif;
   --paragraph-text: 'Prompt', sans-serif;
@@ -61,13 +71,13 @@ main {
 }
 
 h1 {
-    font-family: var(--headline-text);
-    font-size: 1.8rem;
-    background: var(--transparent-bg-dark);
-    padding: 0.4rem;
-    margin-bottom: 1.6rem;
-    text-shadow: 1px 1px #0fbef7e0;
-    box-shadow: 1px 1px 15px #eeeeee;
+  font-family: var(--headline-text);
+  font-size: 1.8rem;
+  background: var(--transparent-bg-dark);
+  padding: 0.4rem;
+  margin-bottom: 1.6rem;
+  text-shadow: 1px 1px #0fbef7e0;
+  box-shadow: 1px 1px 15px #eeeeee;
 }
 
 #instructionButton,
@@ -98,8 +108,8 @@ h1 {
 
 /* The Modal (background) */
 .modal {
-  display: none; 
-  position: fixed; 
+  display: none;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -116,11 +126,11 @@ h1 {
   background-color: var(--dark-color);
   font-size: 1.6rem;
   color: var(--light-color);
-  margin: 10% auto; 
+  margin: 10% auto;
   padding: 1.6rem;
   border: 1px solid var(--light-color);
   height: min-content;
-  width: 80%; 
+  width: 80%;
   max-height: 80%;
   overflow: auto;
 }
@@ -133,7 +143,7 @@ h1 {
   background-color: transparent;
   color: #b6b6b6;
   font-size: 4.8rem;
-  font-weight:lighter;
+  font-weight: lighter;
   line-height: 1.6rem;
   border: 1px solid #b6b6b6;
   border-radius: 50%;
@@ -188,32 +198,34 @@ legend {
 
 /* Base style for radio buttons and their labels */
 input[type="radio"] {
-  display: none; /* Hide the default radio button appearance */
+  display: none;
+  /* Hide the default radio button appearance */
 }
 
 /* Style for the selected radio button container */
-input[type="radio"]:checked + label,
-input[type="radio"]:focus + label {
-  border: 4px solid #00624ff4; /* Border color for checked/focused state */
+input[type="radio"]:checked+label,
+input[type="radio"]:focus+label {
+  border: 4px solid #00624ff4;
+  /* Border color for checked/focused state */
   box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
-  outline: 1px solid #ffffff  ;
+  outline: 1px solid #ffffff;
 }
 
 input[type="date"],
 input[type="number"] {
-    font: inherit;  
-    border: 4px solid rgb(55, 99, 147);
-    padding: 1rem;
-    color: var(--dark-color);
-    background: var(--light-color);
-    text-decoration: none;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 0.8em;
+  font: inherit;
+  border: 4px solid rgb(55, 99, 147);
+  padding: 1rem;
+  color: var(--dark-color);
+  background: var(--light-color);
+  text-decoration: none;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 0.8em;
 }
 
 input[type="date"]:focus-visible {
-    box-shadow: 0px 0px 10px 4px hsl(190.46deg 63.95% 26.73%);
+  box-shadow: 0px 0px 10px 4px hsl(190.46deg 63.95% 26.73%);
 }
 
 label {
@@ -230,13 +242,13 @@ label {
 }
 
 .label-heading {
-    display: block;
-    font-family: var(--headline-text);
-    margin: 1.6rem;
-    font-size: 2.4rem;
-    font-weight: bold;
-    border-radius: 5px;
-    text-shadow: 1px 1px #0fbef7e0;
+  display: block;
+  font-family: var(--headline-text);
+  margin: 1.6rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-shadow: 1px 1px #0fbef7e0;
 }
 
 .label-description {
@@ -264,12 +276,13 @@ label::after {
 }
 
 /* Show check-mark when the associated radio button is checked */
-input[type="radio"]:checked + label::after {
+input[type="radio"]:checked+label::after {
   visibility: visible;
 }
 
 label::after {
-  content: '\2713'; /* Unicode check-mark symbol */
+  content: '\2713';
+  /* Unicode check-mark symbol */
   color: green;
   font-size: 3.2rem;
   font-weight: bolder;
@@ -326,15 +339,89 @@ fieldset {
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .error {
-  color: red;
+  color: #ff0000;
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 2.0rem;
+}
+
+#error-body {
+  display: grid;
+  min-height: 100dvh;
+  line-height: 2.4rem;
+  -webkit-font-smoothing: antialiased;
+  background: url(../images/time-error.avif);
+  background-color: var(--dark-color);
+  background-size: cover;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: var(--paragraph-text);
+  color: var(--light-color);
+  margin-bottom: 2.4rem;
+  margin-inline: 1rem;
+}
+
+#error-container {
+  place-self: center;
+  align-self: center;
+  background: var(--transparent-bg-dark);
+  color: var(--light-color);
+  border: solid 1px #9191918c;
+  border-radius: 12px;
+  padding: 1em;
+  width: 100%;
+  max-width: 400px;
+  margin: 16px auto;
+  box-shadow: 1px 1px 15px #eeeeee;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+#error-heading {
+  font-family: var(--headline-text);
+  font-size: 3.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-shadow: 2px 2px 3px #0fbef7e0;
+}
+
+#error-subheading {
+  text-shadow: 1px 1px #0fbef7e0
+}
+
+#error-message {
+  font-size: 1.6rem;
+  margin: 1.6rem 0;
+}
+
+#error-button {
+  background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
+  margin: 0.5rem auto;
+  padding: 2px;
+  font-size: 1em;
+  color: var(--light-color);
+  border: solid 1px var(--light-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  text-decoration: none;
+}
+
+#error-button:hover,
+#error-button:focus {
+  background: var(--dark-color);
+  color: var(--light-color);
+  box-shadow: 0 0 30px 3px var(--light-color);
 }
 
 footer {
@@ -347,59 +434,62 @@ footer {
 
 @media screen and (min-width: 768px) {
 
-h1 {
+  h1 {
     font-family: var(--headline-text);
     font-size: 3.2rem;
     background: var(--transparent-bg-dark);
     padding: 2rem;
     margin-bottom: 1.6rem;
     text-shadow: 1px 1px #0fbef7e0;
-}
+  }
 
-.radio-questions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
-  gap: 10px;
-}
+  .radio-questions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Creates three equal-width columns */
+    gap: 10px;
+  }
 
-.radio-questions > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0;
-  border-radius: 5px;
-  min-height: 200px;
-  box-sizing: border-box;
-  font-size: 16px;
-}
+  .radio-questions>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    border-radius: 5px;
+    min-height: 200px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
 
-.radio-questions input[type="radio"] {
-  margin-bottom: 10px;
-}
+  .radio-questions input[type="radio"] {
+    margin-bottom: 10px;
+  }
 
-.radio-questions label {
-  display: block;
-  font-size: 16px;
-}
+  .radio-questions label {
+    display: block;
+    font-size: 16px;
+  }
 
-.radio-questions .label-heading,
-.radio-questions .label-description {
-  margin: 21px auto;
-}
+  .radio-questions .label-heading,
+  .radio-questions .label-description {
+    margin: 21px auto;
+  }
 
-.radio-questions .label-description {
-  margin-top: 5px;
-}
+  .radio-questions .label-description {
+    margin-top: 5px;
+  }
 
-}
-
-.change {
-  min-height: 518px;
+  .change {
+    min-height: 518px;
+  }
 }
 
 /* Media query for tall screens (height >= 871px) */
 @media screen and (min-width: 500px) and (min-height: 871px) {
-  #instructionButton, .calculate, .recalculate {
+
+  #instructionButton,
+  .calculate,
+  .recalculate {
     background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
     margin: 0.5rem auto;
     padding: 1em;
@@ -418,14 +508,15 @@ h1 {
     margin-top: 5px;
     font-size: 2.8rem;
     height: 16.0rem;
-    }
+  }
 
-    .label-heading {
-        font-size: 3.7rem;
-        height: 50px;
-        line-height: 37px;
-    }
-    .label-description {
+  .label-heading {
+    font-size: 3.7rem;
+    height: 50px;
+    line-height: 37px;
+  }
+
+  .label-description {
     font-size: 3.2rem;
     line-height: 1.6;
   }
@@ -442,15 +533,15 @@ h1 {
     bottom: -2rem;
   }
 
-    .ageQuestion h2 {
-        margin-top: 4.8rem;
-        text-shadow: 1px 1px #0fbef7e0;
-        font-size: 3.75rem;
-        line-height: 8.0rem;
-    }
+  .ageQuestion h2 {
+    margin-top: 4.8rem;
+    text-shadow: 1px 1px #0fbef7e0;
+    font-size: 3.75rem;
+    line-height: 8.0rem;
+  }
 
-    .error {
+  .error {
     font-size: 3.2rem;
     line-height: 8rem;
-}
+  }
 }
