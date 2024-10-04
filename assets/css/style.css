@@ -152,8 +152,7 @@ h1 {
   cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close:is(:focus, :hover) {
   color: var(--light-color);
   border-color: var(--light-color);
 }
@@ -236,8 +235,7 @@ label {
   border-radius: 24px;
   padding: 11px;
   box-sizing: border-box;
-  width: 100%;
-  max-width: 400px;
+  width: min(100%, 400px);
   margin: 16px auto;
 }
 
@@ -270,8 +268,7 @@ label::after {
   background-color: white;
   border: 2px solid rgb(54, 198, 54);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  place-items: center center;
   visibility: hidden;
 }
 
@@ -293,7 +290,7 @@ label::after {
   cursor: pointer;
 }
 
-.date-question:focus {
+.date-question:is(:focus, :hover) {
   border: 4px solid #00624ff4;
   box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
   outline: none;
@@ -332,8 +329,7 @@ form {
 }
 
 fieldset {
-  min-width: 95%;
-  max-width: 1024px;
+  width: min(95%, 1024px);
   margin: 1px auto;
   min-height: 100%;
 }
@@ -381,8 +377,7 @@ fieldset {
   border: solid 1px #9191918c;
   border-radius: 12px;
   padding: 1em;
-  width: 100%;
-  max-width: 400px;
+  width: min(100%, 40rem);
   margin: 16px auto;
   box-shadow: 1px 1px 15px #eeeeee;
   -webkit-backdrop-filter: blur(3px);
@@ -419,8 +414,7 @@ fieldset {
   text-decoration: none;
 }
 
-#error-button:hover,
-#error-button:focus {
+#error-button:is(:focus, :hover) {
   background: var(--dark-color);
   color: var(--light-color);
   box-shadow: 0 0 30px 3px var(--light-color);
