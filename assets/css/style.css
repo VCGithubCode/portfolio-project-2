@@ -17,8 +17,8 @@ body {
   min-height: 100dvh;
   line-height: 2.4rem;
   -webkit-font-smoothing: antialiased;
+  background: url(../images/hourglass-freepik.avif) no-repeat center;
   background-color: var(--dark-color);
-  background: url(../images/hourglass-freepik.webp) no-repeat center;
   background-size: cover;
   text-align: center;
   font-size: 1.6rem;
