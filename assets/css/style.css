@@ -355,7 +355,7 @@ fieldset {
   margin-bottom: 2.0rem;
 }
 
-#error-body {
+#error-main {
   display: grid;
   min-height: 100dvh;
   line-height: 2.4rem;
