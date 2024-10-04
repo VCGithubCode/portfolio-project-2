@@ -355,9 +355,9 @@ fieldset {
   margin-bottom: 2.0rem;
 }
 
-#error-main {
-  display: grid;
-  min-height: 100dvh;
+#error-body {
+  display: flex;
+  height: 100%;
   line-height: 2.4rem;
   -webkit-font-smoothing: antialiased;
   background: url(../images/time-error.avif);
@@ -367,13 +367,14 @@ fieldset {
   font-size: 1.6rem;
   font-family: var(--paragraph-text);
   color: var(--light-color);
-  margin-bottom: 2.4rem;
-  margin-inline: 1rem;
+}
+
+#error-main {
+  display: grid;
 }
 
 #error-container {
   place-self: center;
-  align-self: center;
   background: var(--transparent-bg-dark);
   color: var(--light-color);
   border: solid 1px #9191918c;
