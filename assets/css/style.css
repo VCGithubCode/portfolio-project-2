@@ -367,6 +367,7 @@ fieldset {
   font-size: 1.6rem;
   font-family: var(--paragraph-text);
   color: var(--light-color);
+  overflow: hidden;
 }
 
 #error-main {
