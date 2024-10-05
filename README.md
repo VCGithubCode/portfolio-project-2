@@ -50,3 +50,47 @@ Clear user feedback is provided immediately and conspicuously so that the user i
 
 Several wire frames were created to help keep focused during the development
 
+## Color
+![image of color pallet for site](assets/images/dac-palette.avif)
+
+A color palette was chosen that matched the background image representing the natural passage of time.  The idea was that a high level of contrast would make the app more accessible.
+
+
+## Typography
+![Quicksand + Prompt](assets/images/font-pairings.avif)
+
+The typography style that was chosen was meant to be easy to read without being too pensive.  The font size was increased a bit depending on where the messages appeared in the layout for ease on the eyes, but without overpowering the main focus of the app. Some text shadow was added to give the text a style mirroring the hourglass in the background image.  The Google fonts, Quicksand and Prompt, were used based on pairings from [Fontjoy.com](https://fontjoy.com/).
+
+# Features
+
+* ## Header
+
+![Title Header](assets/images/dac-header.avif)
+
+A simple title Header was created to give users a clear and immediate understanding of what the app is about at a glance.
+
+* ## Instructions
+![Show Instructions](assets/images/instruction-button.avif)
+
+
+A "Show Instructions" button that activates a modal window which gives further instruction about how the app is to be used was provided for user support.
+
+![Modal Window](assets/images/instruction-modal.avif)
+
+
+* ## Calculator Options
+![alt text](assets/images/calculator-choices.avif)
+
+The user is presented with three radio buttons that allows them to choose which date calculation they would like to perform.  The typical radio buttons were converted into three selection boxes, allowing the user to more easily select and identify their choice.  The question contained in the selection box also matches the calculator display.
+
+* ## Calculator Display
+![How old am I?](assets/images/dob-calc.avif)
+Depending on which option the user selects, they will presented with an input field for their date of birth and be provided with their age when they select the calculate button...
+
+![What year was I born?](assets/images/born-calc.avif)
+Or the year they were born in when they provide their age in years...
+
+![Days between dates calculator?](assets/images/difference-calc.avif)
+Or the difference in days between two dates when they provide two dates...
+
+
