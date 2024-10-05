@@ -53,10 +53,11 @@ select {
 
 :root {
   /* Colors */
-  --primary-color: #201E43;
-  --secondary-color: #134B70;
-  --tertiary-color: #508C9B;
-  --light-color: #EEEEEE;
+  --primary-color: #0a171f;
+  --secondary-color: #2e5d79;
+  --tertiary-color: #4698cb;
+  --outline: #eec3a4;
+  --light-color: #eeeeee;
   --dark-color: #050505;
   --transparent-bg-dark: #000000d5;
   --transparent-bg-light: #eeeeeed5;
@@ -76,14 +77,14 @@ h1 {
   background: var(--transparent-bg-dark);
   padding: 0.4rem;
   margin-bottom: 1.6rem;
-  text-shadow: 1px 1px #0fbef7e0;
-  box-shadow: 1px 1px 15px #eeeeee;
+  text-shadow: 1px 1px 1px var(--tertiary-color);
+  box-shadow: 1px 1px 15px var(--light-color);
 }
 
 #instructionButton,
 .calculate,
 .recalculate {
-  background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--tertiary-color) 50%, var(--secondary-color) 100%);
   margin: 0.5rem auto;
   padding: 2px;
   font-size: 1em;
@@ -158,7 +159,7 @@ h1 {
 }
 
 .close:focus-visible {
-  outline: 4px solid #ffffff;
+  outline: 4px solid var(--outline);
 }
 
 
@@ -166,7 +167,7 @@ h1 {
   font-size: 2rem;
   border: transparent;
   margin-bottom: 1.6rem;
-  text-shadow: 1px 1px #0fbef7e0;
+  text-shadow: 1px 1px 1px var(--tertiary-color);
 }
 
 .container {
@@ -191,7 +192,7 @@ legend {
   margin: 0.5rem auto;
   font-size: calc(1.275rem + .3vw);
   line-height: inherit;
-  background: #000000d1;
+  background: var(--transparent-bg-dark);
   padding: 0.5rem;
 }
 
@@ -207,13 +208,13 @@ input[type="radio"]:focus+label {
   border: 4px solid #00624ff4;
   /* Border color for checked/focused state */
   box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
-  outline: 1px solid #ffffff;
+  outline: 1px solid var(--outline);
 }
 
 input[type="date"],
 input[type="number"] {
   font: inherit;
-  border: 4px solid rgb(55, 99, 147);
+  border: 4px solid var(--tertiary-color);
   padding: 1rem;
   color: var(--dark-color);
   background: var(--light-color);
@@ -224,7 +225,7 @@ input[type="number"] {
 }
 
 input[type="date"]:focus-visible {
-  box-shadow: 0px 0px 10px 4px hsl(190.46deg 63.95% 26.73%);
+  box-shadow: 0px 0px 10px 4px #196170
 }
 
 label {
@@ -246,7 +247,7 @@ label {
   font-size: 2.4rem;
   font-weight: bold;
   border-radius: 5px;
-  text-shadow: 1px 1px #0fbef7e0;
+  text-shadow: 1px 1px 1px var(--tertiary-color);
 }
 
 .label-description {
@@ -265,8 +266,8 @@ label::after {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: white;
-  border: 2px solid rgb(54, 198, 54);
+  background-color: var(--light-color);
+  border: 2px solid #248fa4;
   display: flex;
   place-items: center center;
   visibility: hidden;
@@ -280,7 +281,7 @@ input[type="radio"]:checked+label::after {
 label::after {
   content: '\2713';
   /* Unicode check-mark symbol */
-  color: green;
+  color: #2db23d;
   font-size: 3.2rem;
   font-weight: bolder;
 }
@@ -312,11 +313,11 @@ form {
   background: var(--transparent-bg-dark);
   animation: fadeIn 2s;
   font-family: var(--headline-text);
-  color: whitesmoke;
+  color: var(--light-color);
   width: 100%;
-  border: solid 1px silver;
+  border: solid 1px var(--light-color);
   border-radius: 4px;
-  box-shadow: 1px 1px 15px #eeeeee;
+  box-shadow: 1px 1px 15px var(--light-color);
 }
 
 .ageQuestion {
@@ -325,7 +326,7 @@ form {
 
 .ageQuestion h2 {
   margin-top: 2rem;
-  text-shadow: 1px 1px #0fbef7e0;
+  text-shadow: 1px 1px 1px var(--tertiary-color);
 }
 
 fieldset {
@@ -389,11 +390,11 @@ fieldset {
   font-size: 3.2rem;
   font-weight: bold;
   border-radius: 8px;
-  text-shadow: 2px 2px 3px #0fbef7e0;
+  text-shadow: 2px 2px 3px var(--tertiary-color);
 }
 
 #error-subheading {
-  text-shadow: 1px 1px #0fbef7e0
+  text-shadow: 1px 1px 1px var(--tertiary-color);
 }
 
 #error-message {
@@ -422,21 +423,17 @@ fieldset {
 
 footer {
   position: fixed;
-  background: #000000e5;
-  color: #EEEEEE;
+  background: var(--transparent-bg-dark);
+  color: var(--light-color);
   bottom: 0;
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-
+  
   h1 {
-    font-family: var(--headline-text);
     font-size: 3.2rem;
-    background: var(--transparent-bg-dark);
     padding: 2rem;
-    margin-bottom: 1.6rem;
-    text-shadow: 1px 1px #0fbef7e0;
   }
 
   .radio-questions {
@@ -486,14 +483,8 @@ footer {
   #instructionButton,
   .calculate,
   .recalculate {
-    background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
-    margin: 0.5rem auto;
     padding: 1em;
     font-size: 1.6em;
-    color: var(--light-color);
-    border: solid 1px var(--light-color);
-    border-radius: 8px;
-    cursor: pointer;
   }
 
   .container {
@@ -531,7 +522,6 @@ footer {
 
   .ageQuestion h2 {
     margin-top: 4.8rem;
-    text-shadow: 1px 1px #0fbef7e0;
     font-size: 3.75rem;
     line-height: 8.0rem;
   }
