@@ -36,9 +36,9 @@ The website was designed with simplicity in mind.  There is nothing overwhelming
 Clear user feedback is provided immediately and conspicuously so that the user is informed that their input has been received.
 
 ## Wire frames
-![Age Wire Frame 1](assets/wireframes/age-1.avif)
+![Date of Birth Wire Frame 1](assets/wireframes/dob-1.avif)
 
-![Age Wire Frame 2](assets/wireframes/age-2.avif)
+![Date of Birth Wire Frame 2](assets/wireframes/dob-2.avif)
 
 ![Born Year Wire Frame 1](assets/wireframes/year-born-1.avif)
 
@@ -93,4 +93,5 @@ Or the year they were born in when they provide their age in years...
 ![Days between dates calculator?](assets/images/difference-calc.avif)
 Or the difference in days between two dates when they provide two dates...
 
+* ## Recalculate button
 
