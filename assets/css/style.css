@@ -19,8 +19,8 @@ body {
   min-height: 100dvh;
   line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
-  background: url(../images/hourglass-freepik.avif) no-repeat center;
-  background-color: var(--dark-color);
+  background: url(../images/hourglass-freepik.avif), url(../images/hourglass-freepik.jpg);
+    background-color: var(--dark-color);
   background-size: cover;
   text-align: center;
   font-size: 1rem;
@@ -359,9 +359,11 @@ fieldset {
   height: 100%;
   line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
-  background: url(../images/time-error.avif);
+  background:   url(../images/time-error.avif) no-repeat center, 
+  url(../images/time-error.jpg) no-repeat center;
   background-color: var(--dark-color);
   background-size: cover;
+  background-position: center;
   text-align: center;
   font-size: 1rem;
   font-family: var(--paragraph-text);
