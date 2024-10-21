@@ -30,12 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Close the modal when clicking outside of the modal content
-  window.addEventListener("click", function(event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
+// Close the modal when clicking or tapping outside of the modal content
+window.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+window.addEventListener("touchstart", function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
 
   // Function to open the modal
   function toggleModal() {
@@ -47,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.display = "none";
   }
 });
+
+
   // Event listeners for radio buttons
   document.querySelectorAll('input[name="resultType"]').forEach((radio) => {
     radio.addEventListener("change", handleRadioChange);
