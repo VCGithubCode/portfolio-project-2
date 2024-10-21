@@ -572,6 +572,8 @@ function calculateDateDifference() {
   differenceErrorElement.classList.add("hide");
 }
 
+/* global JSConfetti */
+
 // Initialize the confetti settings from JSConfetti
 function loadConfettiScript() {
   return new Promise((resolve, reject) => {
