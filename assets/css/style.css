@@ -314,7 +314,7 @@ form {
   font-family: var(--headline-text);
   color: var(--light-color);
   width: 100%;
-  min-height: 100vh;
+  min-height: 518px;
   border: solid 1px var(--light-color);
   border-radius: 4px;
   box-shadow: 1px 1px 15px var(--light-color);
@@ -478,6 +478,10 @@ footer {
   .radio-questions .label-description {
     margin-top: 5px;
   }
+
+  .change {
+    min-height: 612px;
+  }
 }
 
 /* Media query for tall screens (height >= 871px) */
@@ -523,6 +527,11 @@ footer {
     left: -1.6rem;
     bottom: -1.6rem;
   }
+
+  .change {
+    min-height: 100vh;
+  }
+  
 
   .ageQuestion h2 {
     margin: 2rem 1rem 0;
