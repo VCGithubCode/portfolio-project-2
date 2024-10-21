@@ -1,6 +1,6 @@
 /* Root Font Size */
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 /* Base Styles */
@@ -17,16 +17,16 @@ html {
 
 body {
   min-height: 100dvh;
-  line-height: 2.4rem;
+  line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
   background: url(../images/hourglass-freepik.avif) no-repeat center;
   background-color: var(--dark-color);
   background-size: cover;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-family: var(--paragraph-text);
   color: var(--light-color);
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.5rem;
 }
 
 img,
@@ -73,10 +73,10 @@ main {
 
 h1 {
   font-family: var(--headline-text);
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   background: var(--transparent-bg-dark);
-  padding: 0.4rem;
-  margin-bottom: 1.6rem;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
   text-shadow: 1px 1px 1px var(--tertiary-color);
   box-shadow: 1px 1px 15px var(--light-color);
 }
@@ -84,9 +84,9 @@ h1 {
 #instructionButton,
 .calculate,
 .recalculate {
-  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--tertiary-color) 50%, var(--secondary-color) 100%);
+  background: linear-gradient(90deg, var(--secondary-color) 0%, #3c88b5 50%, var(--secondary-color) 100%);
   margin: 0.5rem auto;
-  padding: 2px;
+  padding: 8px;
   font-size: 1em;
   color: var(--light-color);
   border: solid 1px var(--light-color);
@@ -104,7 +104,7 @@ h1 {
 }
 
 #instructionButton {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 /* The Modal (background) */
@@ -123,12 +123,13 @@ h1 {
 
 /* Modal Content */
 .modal-content {
+  display: grid;
   position: relative;
   background-color: var(--dark-color);
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: var(--light-color);
   margin: 10% auto;
-  padding: 1.6rem;
+  padding: 1rem;
   border: 1px solid var(--light-color);
   height: min-content;
   width: 80%;
@@ -136,21 +137,20 @@ h1 {
   overflow: auto;
 }
 
-/* The Modal Close Button */
 .close {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
+  position: fixed;
   background-color: transparent;
-  color: #b6b6b6;
-  font-size: 4.8rem;
+  color: #ffffff;
+  font-size: 1.875rem;
   font-weight: lighter;
-  line-height: 1.6rem;
-  border: 1px solid #b6b6b6;
+  line-height: 0.9375rem;
+  border: 1px solid #d2d2d2;
   border-radius: 50%;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 1.375rem;
+  height: 1.375rem;
   cursor: pointer;
+  justify-self: flex-end;
+  margin: 4px;
 }
 
 .close:is(:focus, :hover) {
@@ -164,17 +164,16 @@ h1 {
 
 
 .modal h2 {
-  font-size: 2rem;
+  font-size: 1.25rem;
   border: transparent;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
   text-shadow: 1px 1px 1px var(--tertiary-color);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  min-height: 100vh;
 }
 
 .interaction {
@@ -190,7 +189,7 @@ fieldset {
 legend {
   width: 100%;
   margin: 0.5rem auto;
-  font-size: calc(1.275rem + .3vw);
+  font-size: calc(0.7985rem + 0.1875vw);
   line-height: inherit;
   background: var(--transparent-bg-dark);
   padding: 0.5rem;
@@ -215,13 +214,13 @@ input[type="date"],
 input[type="number"] {
   font: inherit;
   border: 4px solid var(--tertiary-color);
-  padding: 1rem;
+  padding: 0.625rem;
   color: var(--dark-color);
   background: var(--light-color);
   text-decoration: none;
   border-radius: 10px;
   text-align: center;
-  margin-top: 0.8em;
+  margin-top: 0.5rem;
 }
 
 input[type="date"]:focus-visible {
@@ -236,15 +235,15 @@ label {
   border-radius: 24px;
   padding: 11px;
   box-sizing: border-box;
-  width: min(100%, 400px);
-  margin: 16px auto;
+  width: min(100%, 767px);
+  margin: 0.5rem auto;
 }
 
 .label-heading {
   display: block;
   font-family: var(--headline-text);
-  margin: 1.6rem;
-  font-size: 2.4rem;
+  margin: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   border-radius: 5px;
   text-shadow: 1px 1px 1px var(--tertiary-color);
@@ -254,15 +253,15 @@ label {
   display: block;
   font-family: var(--paragraph-text);
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 
 /* Style for the check-mark circle */
 label::after {
   content: '';
   position: relative;
-  left: -2rem;
-  bottom: -2rem;
+  left: -1.6rem;
+  bottom: -1.6rem;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -282,17 +281,17 @@ label::after {
   content: '\2713';
   /* Unicode check-mark symbol */
   color: #2db23d;
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
 .date-question {
-  flex: 1;
-  cursor: pointer;
+    flex: 1;
+    cursor: pointer;
 }
 
 .date-question:is(:focus, :hover) {
-  border: 4px solid #00624ff4;
+  border: 1px solid #00624ff4;
   box-shadow: 0px 0px 10px 2px hsl(190.46deg 63.95% 26.73%);
   outline: none;
 }
@@ -302,7 +301,7 @@ label::after {
 }
 
 .radio-questions .label-description {
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 
 form {
@@ -315,22 +314,25 @@ form {
   font-family: var(--headline-text);
   color: var(--light-color);
   width: 100%;
+  min-height: 100vh;
   border: solid 1px var(--light-color);
   border-radius: 4px;
   box-shadow: 1px 1px 15px var(--light-color);
 }
 
 .ageQuestion {
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .ageQuestion h2 {
-  margin-top: 2rem;
+  margin: 1.25rem 1rem 0;
   text-shadow: 1px 1px 1px var(--tertiary-color);
+  line-height: 3rem;
+  font-size: 1.3rem;
 }
 
 fieldset {
-  width: min(95%, 1024px);
+  width: min(95%, 1440px);
   margin: 1px auto;
   min-height: 100%;
 }
@@ -347,21 +349,21 @@ fieldset {
 
 .error {
   color: #ff0000;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 2.0rem;
+  margin: 0 1rem 1.25rem;
 }
 
 #error-body {
   display: flex;
   height: 100%;
-  line-height: 2.4rem;
+  line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
   background: url(../images/time-error.avif);
   background-color: var(--dark-color);
   background-size: cover;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-family: var(--paragraph-text);
   color: var(--light-color);
   overflow: hidden;
@@ -377,9 +379,9 @@ fieldset {
   color: var(--light-color);
   border: solid 1px #9191918c;
   border-radius: 12px;
-  padding: 1em;
+  padding: 1.5em;
   width: min(100%, 40rem);
-  margin: 16px auto;
+  margin: 0.625rem auto;
   box-shadow: 1px 1px 15px #eeeeee;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
@@ -387,7 +389,7 @@ fieldset {
 
 #error-heading {
   font-family: var(--headline-text);
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: bold;
   border-radius: 8px;
   text-shadow: 2px 2px 3px var(--tertiary-color);
@@ -398,14 +400,14 @@ fieldset {
 }
 
 #error-message {
-  font-size: 1.6rem;
-  margin: 1.6rem 0;
+  font-size: 1rem;
+  margin: 1rem 0;
 }
 
 #error-button {
   background: linear-gradient(90deg, #134B70 0%, #1b68af 50%, #134B70 100%);
   margin: 0.5rem auto;
-  padding: 2px;
+  padding: 8px;
   font-size: 1em;
   color: var(--light-color);
   border: solid 1px var(--light-color);
@@ -432,8 +434,13 @@ footer {
 @media screen and (min-width: 768px) {
   
   h1 {
-    font-size: 3.2rem;
+    font-size: 2rem;
     padding: 2rem;
+  }
+
+  label::after {
+    left: -1.6rem;
+    bottom: -2rem;
   }
 
   .radio-questions {
@@ -455,12 +462,12 @@ footer {
   }
 
   .radio-questions input[type="radio"] {
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
   }
 
   .radio-questions label {
     display: block;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .radio-questions .label-heading,
@@ -470,10 +477,6 @@ footer {
 
   .radio-questions .label-description {
     margin-top: 5px;
-  }
-
-  .change {
-    min-height: 518px;
   }
 }
 
@@ -492,42 +495,43 @@ footer {
   }
 
   .radio-questions .label-description {
-    margin-top: 5px;
-    font-size: 2.8rem;
-    height: 16.0rem;
-  }
+    margin-top: 1em;
+    font-size: 2rem;
+    height: 8rem;
+    line-height: 3rem;
+}
 
   .label-heading {
-    font-size: 3.7rem;
+    font-size: 2.3125rem;
     height: 50px;
     line-height: 37px;
   }
 
   .label-description {
-    font-size: 3.2rem;
-    line-height: 1.6;
+    font-size: 2rem;
+    line-height: 1rem;
   }
 
   .label.prompt {
-    margin: 4.8rem auto;
-    font-size: 3.2rem;
+    margin: 2rem auto;
+    font-size: 2rem;
     line-height: 4.8rem;
     min-width: 50%;
-  }
+}
 
   label::after {
-    left: -2.5rem;
-    bottom: -2rem;
+    left: -1.6rem;
+    bottom: -1.6rem;
   }
 
   .ageQuestion h2 {
-    margin-top: 4.8rem;
-    font-size: 3.75rem;
-    line-height: 8.0rem;
-  }
+    margin: 2rem 1rem 0;
+    font-size: 2.34375rem;
+    line-height: 2rem;
+}
 
   .error {
-    font-size: 3.2rem;
+    font-size: 2rem;
     line-height: 8rem;
   }
 }
