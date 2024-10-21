@@ -5,6 +5,8 @@
  * hide prompts, show the recalculate button, run the calculator based on the selected calculator type, and handle various event listeners.
  * The script also includes references to HTML elements and classes for manipulation and display purposes.
  */
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize the calculator
   const initialCalculatorType = "HowOldAmIQuestion";
@@ -570,8 +572,38 @@ function calculateDateDifference() {
   differenceErrorElement.classList.add("hide");
 }
 
+// Initialize the confetti settings from JSConfetti
+function loadConfettiScript() {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js';
+    script.onload = () => resolve(new JSConfetti());
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+let isConfettiRunning = false;
+
+function showConfetti() {
+  if (isConfettiRunning) return;
+
+  isConfettiRunning = true;
+  loadConfettiScript().then(jsConfetti => {
+    jsConfetti.addConfetti({
+      emojis: ['⭐','🎊', "🎈",'🎁', '🎂', '🥳'],
+      emojiSize: 50,
+      confettiNumber: 50,
+    });
+
+    setTimeout(() => {
+      isConfettiRunning = false;
+    }, 2000); // Allow confetti to run again after 2 seconds
+  });
+}
+
 /**
- * Checks if the user's selected date is their birthday and displays a birthday message if true.
+ * Checks if the user's selected date is their birthday and displays a birthday message and displays a confetti effect if true.
  */
 function checkDate() {
   const currentDate = new Date();
@@ -584,5 +616,6 @@ function checkDate() {
 
   if (isBirthday) {
     document.getElementById("ageQuestion").innerHTML += "<br>Happy Birthday!🥳";
+    showConfetti();
   }
 }
