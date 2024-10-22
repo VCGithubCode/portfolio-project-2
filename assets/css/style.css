@@ -3,6 +3,11 @@ html {
   font-size: 100%;
 }
 
+/* Reduce unnecessary x-axis scroll */
+html, body {
+overflow-x: hidden;
+}
+
 /* Base Styles */
 *,
 *::before,
