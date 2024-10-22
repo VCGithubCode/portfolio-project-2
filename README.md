@@ -97,10 +97,12 @@ The user is presented with three radio buttons that allows them to choose which 
 Depending on which option the user selects, they will presented with an input field for their date of birth and be provided with their age when they select the calculate button...
 
 ![What year was I born?](assets/images/born-calc.avif)
-Or the year they were born in when they provide their age in years...
+
+...or the year they were born in when they provide their age in years...
 
 ![Days between dates calculator?](assets/images/difference-calc.avif)
-Or the difference in days between two dates when they provide two dates.
+
+...or the difference in days between two dates when they provide two dates.
 
 * ## Recalculate button
 ![Recalculate button](assets/images/recalculate-button.avif)
@@ -110,6 +112,7 @@ After the initial calculation has been performed, the user is presented with a r
 * ## Footer
 
 ![Footer](assets/images/dac-footer.avif)
+
 The footer contains remarks on the main purpose of the project for now.
 
 * ## 404 Error Page
