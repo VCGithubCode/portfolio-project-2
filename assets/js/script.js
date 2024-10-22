@@ -212,7 +212,7 @@ function resetInputsForType(type) {
       break;
 
     default:
-      console.error(`Unknown calculator type: ${type}. No inputs reset.`);
+      alert(`Unknown calculator type: ${type}. No inputs reset.`);
   }
 
   // Show prompts for the selected type
@@ -298,7 +298,7 @@ function showRecalculateButton() {
  */
 function runCalculator(calculatorType) {
   if (!isValidCalculatorType(calculatorType)) {
-    console.error(`Unknown calculator type: ${calculatorType}. Aborting!`);
+    alert(`Unknown calculator type: ${calculatorType}. Aborting!`);
     return;
   }
 
@@ -334,7 +334,7 @@ function selectCalculatorType(type) {
   if (radioInput) {
     radioInput.checked = true;
   } else {
-    console.error(
+    alert(
       `Radio button for calculator type ${type} not found. Aborting!`
     );
   }
@@ -349,7 +349,7 @@ function selectCalculatorType(type) {
 function displayQuestion(calculatorType) {
   const ageQuestionElement = document.getElementById("ageQuestion");
   if (!ageQuestionElement) {
-    console.error("Element with id 'ageQuestion' not found. Aborting!");
+    alert("Element with id 'ageQuestion' not found. Aborting!");
     return;
   }
 
@@ -372,7 +372,7 @@ function displayQuestion(calculatorType) {
       differenceResultElement.classList.remove("hide");
       break;
     default:
-      console.error(`Unknown calculator type: ${calculatorType}. Aborting!`);
+      alert(`Unknown calculator type: ${calculatorType}. Aborting!`);
   }
 }
 
