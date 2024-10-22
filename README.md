@@ -2,14 +2,14 @@
 
 ![Mockup Image](assets/images/dac-mockups.avif)
 
-The Date, Age, and Birth year Calculator is a quick, easy, and straight to the point app, for people that want to know an age, birth year, or difference between two dates.
+The Date, Age, and Birth Year Calculator is a simple and straightforward web app for anyone wanting to quickly determine an age, birth year, or the difference between two dates.
 
-The Date, Age and Birth year Calculator strives to be a resource for people that have a question about these three choices without the confusion or ruggedness of the current options available on the web.
+This tool aims to be a resource for those seeking answers to these questions without the complexity or clutter often found in other online options.
 
 [Click here to take a look at the Live Webapp](https://vcgithubcode.github.io/portfolio-project-2/)
 
 
-# Authors
+# Author
 
 - [@VCGithubCode](https://www.github.com/VCGithubCode)
 
@@ -19,30 +19,30 @@ The Date, Age and Birth year Calculator strives to be a resource for people that
 
 - Users looking to recall their own age or figure out the age of someone else quickly using their birth date
 - Users looking to recall their own birth year or the birth year of someone else using their age
-- Users looking quickly calculate the difference between two dates
+- Users looking to quickly calculate the difference between two dates
 
 ## User Stories
 
-### As a first time user I want to:
+### As a user I want to:
 
-1. Figure out how to quickly find out my age
-2. Calculate my birth year from how many years old I am
+1. Figure out how to quickly calculate an age
+2. Calculate a birth year from how many years old a person is
 3. Find the difference in days between two dates
 
 # Design Choices
 
-The website was designed with simplicity in mind.  There is nothing overwhelming happening to distract the user from their main purpose.  The typical radio buttons have been converted into larger buttons with clearly printed options and a display below that gives the user a second chance to be sure they are asking the right question, making navigating the single page app intuitive.
+This web app was designed with simplicity as a priority. There are no unnecessary distractions, allowing the user to focus on their main task. The typical radio buttons have been replaced with larger, more prominent buttons that clearly present the available options. Additionally, the display below each selection provides users with a second chance to ensure they are answering the correct question, making navigation through the single-page app intuitive and straightforward.
 
-Clear user feedback is provided immediately and conspicuously so that the user is informed that their input has been received.
+Users receive immediate and clear feedback to confirm their input has been received.
 
 ## Wire frames
 ![Date of Birth Wire Frame 1](assets/wireframes/dob-1.avif)
 
 ![Date of Birth Wire Frame 2](assets/wireframes/dob-2.avif)
 
-![Born Year Wire Frame 1](assets/wireframes/year-born-1.avif)
+![Born Year Wire Frame 1](assets/wireframes/born-1.avif)
 
-![Born Year Wire Frame 2](assets/wireframes/year-born-2.avif)
+![Born Year Wire Frame 2](assets/wireframes/born-2.avif)
 
 ![Difference Wire Frame 1](assets/wireframes/difference-1.avif)
 
@@ -62,6 +62,11 @@ A color palette was chosen that matched the background image representing the na
 The typography style that was chosen was meant to be easy to read without being too pensive.  The font size was increased a bit depending on where the messages appeared in the layout for ease on the eyes, but without overpowering the main focus of the app. Some text shadow was added to give the text a style mirroring the hourglass in the background image.  The Google fonts, Quicksand and Prompt, were used based on pairings from [Fontjoy.com](https://fontjoy.com/).
 
 # Features
+
+* ## Favicon
+![Favicon](assets/favicon/apple-touch-icon.png)
+
+The calendar emoji was chosen as a simple and clear representation of dates
 
 * ## Header
 
