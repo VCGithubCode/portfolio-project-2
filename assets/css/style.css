@@ -146,14 +146,14 @@ h1 {
   position: fixed;
   background-color: transparent;
   color: #ffffff;
-  font-size: 1.875rem;
+  font-size: 3rem;
   font-weight: lighter;
   line-height: 0.9375rem;
   width: 1.375rem;
   height: 1.375rem;
   cursor: pointer;
   justify-self: flex-end;
-  margin: 12px;
+  margin: 4px;
 }
 
 .close:is(:focus, :hover) {
