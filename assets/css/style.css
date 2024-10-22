@@ -144,13 +144,11 @@ h1 {
   font-size: 1.875rem;
   font-weight: lighter;
   line-height: 0.9375rem;
-  border: 1px solid #d2d2d2;
-  border-radius: 50%;
   width: 1.375rem;
   height: 1.375rem;
   cursor: pointer;
   justify-self: flex-end;
-  margin: 4px;
+  margin: 12px;
 }
 
 .close:is(:focus, :hover) {
@@ -160,6 +158,7 @@ h1 {
 
 .close:focus-visible {
   outline: 4px solid var(--outline);
+  border-radius: 50%;
 }
 
 
