@@ -1,4 +1,4 @@
-# The Date, Age, and Birth year Calculator
+# The Date, Age, and Birth Year Calculator
 
 ![Mockup Image](assets/images/dac-mockup.avif)
 
@@ -103,6 +103,29 @@ Depending on which option the user selects, they will presented with an input fi
 ![Days between dates calculator?](assets/images/difference-calc.avif)
 
 ...or the difference in days between two dates when they provide two dates.
+
+* ## Error Handling
+
+![No Entry DOB Error](assets/images/no-entrydob.avif)
+
+An error for those times when a user doesn't enter a date of birth and attempts to calculate their age.
+
+![Future DOB Error](assets/images/future-dob.avif)
+
+An error for those times when a user chooses a future date for their date of birth.
+
+![Age Range Error](assets/images/insane-number.avif)
+
+An error for those other times when the user claims to be a time traveler
+
+
+![Age Range Error 2](assets/images/youth-fountain.avif)
+
+An error for those times when the user claims to have discovered the fountain of youth.
+
+![No First Date](assets/images/nofirst-date.avif)
+
+An error for those times when the user does not enter a first date.
 
 * ## Recalculate button
 ![Recalculate button](assets/images/recalculate-button.avif)
