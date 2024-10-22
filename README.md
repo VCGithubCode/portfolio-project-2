@@ -1,6 +1,6 @@
 # The Date, Age, and Birth year Calculator
 
-![Mockup Image](assets/images/dac-mockups.avif)
+![Mockup Image](assets/images/dac-mockup.avif)
 
 The Date, Age, and Birth Year Calculator is a simple and straightforward web app for anyone wanting to quickly determine an age, birth year, or the difference between two dates.
 
