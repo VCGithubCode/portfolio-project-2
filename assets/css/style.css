@@ -66,6 +66,7 @@ select {
   --dark-color: #050505;
   --transparent-bg-dark: #000000d5;
   --transparent-bg-light: #eeeeeed5;
+  --button-text: #ffffff;
 
   /* Fonts */
   --headline-text: 'Quicksand', sans-serif;
@@ -93,8 +94,8 @@ h1 {
   margin: 0.5rem auto;
   padding: 8px;
   font-size: 1em;
-  color: var(--light-color);
-  border: solid 1px var(--light-color);
+  color: var(--button-text);
+  border: solid 1px var(--button-text);
   border-radius: 8px;
   cursor: pointer;
   transition: ease-in-out 0.3s;
@@ -416,8 +417,8 @@ fieldset {
   margin: 0.5rem auto;
   padding: 8px;
   font-size: 1em;
-  color: var(--light-color);
-  border: solid 1px var(--light-color);
+  color: var(--button-text);
+  border: solid 1px var(--button-text);
   border-radius: 8px;
   cursor: pointer;
   transition: ease-in-out 0.3s;
