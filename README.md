@@ -116,7 +116,7 @@ An error for those times when a user chooses a future date for their date of bir
 
 ![Age Range Error](assets/images/insane-number.avif)
 
-An error for those other times when the user claims to be a time traveler
+An error for those other times when the user claims to be a time traveler.
 
 
 ![Age Range Error 2](assets/images/youth-fountain.avif)
@@ -147,4 +147,67 @@ If a user navigates to an invalid URL, they will be directed to the 404 error pa
 ![Back to Home Button](assets/images/bth-button.avif)
 
 This button provides a way for the user to return to the main web app if they are directed to the 404 error page.
+
+# Testing
+
+  - [HTML](#html)
+  - [CSS](#css)
+  - [JavaScript](#javascript)
+  - [Manual Testing](#manual-testing)
+  
+## Validator Testing
+
+### Home
+
+- index.html
+
+![Wave Summary for Home Page](assets/images/wave-validation.png)
+
+- 404.html
+
+![Wave Summary for Error Page](assets/images/wave-validation2.png)
+
+No errors or contrast errors found
+
+### HTML
+
+#### Home
+
+![W3 Validation Index Page](assets/images/w3validation-index.png)
+
+No errors found
+
+#### Error 404
+
+![W3 Validation Error Page](assets/images/w3validation-error.png)
+
+No errors found
+
+### CSS
+
+  - style.css
+
+![Jigsaw Validation CSS](assets/images/jigsaw-validation.png)
+
+No errors found
+
+### Javascript
+
+  - script.js
+
+![JShint](assets/images/jshint-validation.png)
+
+No errors found
+
+## Lighthouse
+
+### Home
+
+![Lighthouse Results Home](assets/images/lighthousevalidation-home.png)
+
+### Error
+![Lighthouse Results Error](assets/images/lighthousevalidation-error.png)
+
+
+### Manual Testing
 
