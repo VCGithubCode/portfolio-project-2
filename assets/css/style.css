@@ -464,7 +464,7 @@ footer {
     border-radius: 5px;
     min-height: 200px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .radio-questions input[type="radio"] {
