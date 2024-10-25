@@ -24,8 +24,9 @@ body {
   min-height: 100dvh;
   line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
-  background: url(../images/hourglass-freepik.avif), url(../images/hourglass-freepik.jpg);
+  background: url(../images/hourglass-freepik.avif), url(../images/hourglass-freepik.jpg) no-repeat;
     background-color: var(--dark-color);
+  background-position-x: -43rem;
   background-size: cover;
   text-align: center;
   font-size: 1rem;
@@ -33,6 +34,7 @@ body {
   color: var(--light-color);
   margin-bottom: 1.5rem;
 }
+
 
 img,
 picture,
@@ -367,9 +369,9 @@ fieldset {
   -webkit-font-smoothing: antialiased;
   background:   url(../images/time-error.avif) no-repeat center, 
   url(../images/time-error.jpg) no-repeat center;
-  background-color: var(--dark-color);
   background-size: cover;
   background-position: center;
+  background-color: var(--dark-color);
   text-align: center;
   font-size: 1rem;
   font-family: var(--paragraph-text);
@@ -439,7 +441,31 @@ footer {
   width: 100%;
 }
 
+
+/* For medium screens (tablets) */
+@media screen and (min-width: 468px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-position-x: -64rem;
+  }
+}
+
+/* For medium screens (tablets) */
+@media screen and (min-width: 600px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: -73rem;
+  }
+}
+
+
 @media screen and (min-width: 768px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: -60rem;
+  }
   
   h1 {
     font-size: 2rem;
@@ -492,8 +518,28 @@ footer {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-position-x: -45rem;
+  }
+}
+
+/* For devices with width 1300px and above, and height 799px and above */
+@media screen and (min-width: 1200px) {
+  body {
+    background-position: center;
+  }
+}
+
+
 /* Media query for tall screens (height >= 871px) */
 @media screen and (min-width: 500px) and (min-height: 871px) {
+
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-position-x: -45rem;
+}
 
   #instructionButton,
   .calculate,
@@ -550,5 +596,64 @@ footer {
   .error {
     font-size: 2rem;
     line-height: 8rem;
+  }
+}
+
+/* For devices with width 767px and above, and height 799px and above */
+@media screen and (min-width: 767px) and (min-height: 1023px) {
+  body {
+    background-size: cover;
+    background-position-x: -112rem;
+  }
+}
+
+/* For devices with width between 819px and 1022px, and height 799px and above */
+@media screen and (min-width: 819px) and (max-width: 911px) and (min-height: 1023px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: -190rem;
+  }
+}
+
+/* For devices with width between 1023px and 1025px, and height 799px and above */
+@media screen and (min-width: 911px) and (max-width: 1022px) and (min-height: 1023px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: -130rem;
+  }
+}
+
+/* For devices with width between 1023px and 1025px, and height 799px and above */
+@media screen and (min-width: 1023px) and (max-width: 1025px) and (min-height: 1023px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: -126rem;
+  }
+}
+
+/* For devices with width 1025px and above, and height 799px and above */
+@media screen and (min-width: 1025px) and (min-height: 1023px) {
+  body {
+    background-position-x: -130rem;
+  }
+}
+
+/* For devices with width 1200px and above, and height 799px and above */
+@media screen and (min-width: 1250px) and (min-height: 799px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: -180rem;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
