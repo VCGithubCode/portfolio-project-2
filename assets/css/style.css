@@ -71,8 +71,8 @@ select {
   --button-text: #ffffff;
 
   /* Fonts */
-  --headline-text: 'Quicksand', sans-serif;
-  --paragraph-text: 'Prompt', sans-serif;
+  --headline-text: Poppins, sans-serif;
+  --paragraph-text: Urbanist, sans-serif;
 }
 
 #loader {
