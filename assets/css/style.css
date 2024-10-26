@@ -24,15 +24,22 @@ body {
   min-height: 100dvh;
   line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
-  background: url(../images/hourglass-freepik.avif), url(../images/hourglass-freepik.jpg) no-repeat;
     background-color: var(--dark-color);
-  background-position-x: -43rem;
+  background: url(../images/hourglass-freepik2large.jpg) no-repeat;
+  background-position: calc(50% - 28vw) 50%;
   background-size: cover;
   text-align: center;
   font-size: 1rem;
   font-family: var(--paragraph-text);
   color: var(--light-color);
   margin-bottom: 1.5rem;
+}
+
+@supports (background-image: image-set(url('') 1x)) {
+  body {
+      background-image: image-set(url(../images/hourglass-freepik2large.avif) 1x, url(../images/hourglass-freepik2large.jpg) 1x);
+      background-repeat: no-repeat;
+  }
 }
 
 
