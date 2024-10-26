@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const initialCalculatorType = "HowOldAmIQuestion";
   runCalculator(initialCalculatorType);
 
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+  });
+
   const modal = document.getElementById("instructionModal");
   const btn = document.getElementById("instructionButton");
   const closeBtn = document.querySelector(".close");
