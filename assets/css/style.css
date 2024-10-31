@@ -733,14 +733,6 @@ footer {
   body {
     background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
     background-size: cover;
-    background-position: calc(50% - 38vw) 50%;
-  }
-}
-
-@media screen and (min-width: 1024px) and (min-height: 601px) {
-  body {
-    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
-    background-size: cover;
     background-position: center;
   }
 }
