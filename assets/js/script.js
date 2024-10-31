@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const initialCalculatorType = "HowOldAmIQuestion";
   runCalculator(initialCalculatorType);
 
+  // Hide the loader unless display is needed
   window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     loader.style.display = 'none';
   });
 
+  //Modal variable initialization
   const modal = document.getElementById("instructionModal");
   const btn = document.getElementById("instructionButton");
   const closeBtn = document.querySelector(".close");
