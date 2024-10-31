@@ -236,7 +236,7 @@ h1 {
   color: var(--button-text);
   font-size: 1.8rem;
   font-weight: lighter;
-  line-height: 1rem;
+  line-height: 0.6em;
   width: 1.375rem;
   height: 1.375rem;
   cursor: pointer;
