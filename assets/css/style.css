@@ -97,9 +97,10 @@ select {
   --glass: #a1a1a1;
   width: 40px;
   height: 80px;
-  border-top: 6px solid var(--wood);
-  border-bottom: 6px solid var(--wood);
-  background: linear-gradient(90deg, var(--wood) 2px, var(--sand) 0 5px,var(--wood) 0) 50%/7px 8px no-repeat;
+  border-block: 6px solid var(--wood);
+  border-inline: 0.25px solid var(--glass);
+  background: linear-gradient(90deg, var(--glass) 1px, var(--sand) 0 6px, var(--glass) 0) 50% / 7px 7px no-repeat;
+  background-position-y: 51.5%;
   box-shadow: 0 3px 20px 5px #ffffff50 inset;
   display: grid;
   overflow: hidden;
@@ -111,19 +112,19 @@ select {
   content: "";
   grid-area: 1/1;
   width: 75%;
-  height: calc(50% - 4px);
+  height: calc(50% - 2px);
   margin: 0 auto;
   border: 1px solid var(--glass);
   border-top: 0;
   box-sizing: content-box;
-  border-radius: 0 0 40% 40%;
+  border-radius: 0 0 50% 50%;
   background-image: 
     linear-gradient(to bottom, #000 0%, #000 100%),
     linear-gradient(to top, #000 0%, #000 100%);
   background-size: 4px 2px, 4px 2px;
   background-position: bottom, top;
   background-repeat: no-repeat;
-  background: linear-gradient(var(--d, 0deg), var(--sand) 0%, transparent 100%) bottom / 100% 205%,
+  background: linear-gradient(var(--sandfill, 0deg), var(--sand) 0%, transparent 100%) bottom / 100% 205%,
   linear-gradient(var(--sand) 0%, var(--sand) 100%) center / 0 100%;
   background-repeat: no-repeat;
   animation: inherit;
@@ -133,8 +134,8 @@ select {
 .spinner::after {
   transform-origin: 50% calc(100% + 2px);
   transform: scaleY(-1);
-  --s: 3px;
-  --d: 180deg;
+  --sanddump: 3px;
+  --sandfill: 180deg;
 }
 
 @keyframes hourglass-spin {
@@ -149,7 +150,7 @@ select {
 
 @keyframes sand-flow {
   10%, 70% {
-    background-size: 100% 205%,var(--s, 0) 100%
+    background-size: 100% 205%,var(--sanddump, 0) 100%
   }
 
   70%, 100% {
