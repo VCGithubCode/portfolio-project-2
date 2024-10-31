@@ -559,6 +559,17 @@ footer {
   width: 1.2rem;
   height: 1.2rem;
   margin-left: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  will-change: scale;
+  transition: ease-in-out 0.3s;
+}
+
+.github-link:focus,
+.github-link:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px 2px var(--light-color);
+  outline: none;
 }
 
 @media screen and (min-width: 250px) and (max-width: 599px) and (min-height: 520px) {
