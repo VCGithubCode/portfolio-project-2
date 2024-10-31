@@ -479,7 +479,7 @@ footer {
 }
 
 
-@media screen and (max-width: 599px) {
+@media screen and (min-width: 250px) and (max-width: 599px) and (min-height: 520px) {
   body {
     background: url(../images/hourglass-freepik.avif), url(../images/hourglass-freepik.jpg) no-repeat;
     background-position: calc(50% - 10vw) 50%;
@@ -489,8 +489,8 @@ footer {
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
   body {
-    background: url(../images/hourglass-freepik.avif), url(../images/hourglass-freepik.jpg) no-repeat;
-    background-position: calc(50% - 15vw) 50%;
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
+    background-position: center;
     background-size: cover;
   }
 }
@@ -498,7 +498,7 @@ footer {
 @media screen and (min-width: 768px) {
   body {
     background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.jpg) no-repeat;
-    background-position: calc(50% - 30vw) 50%;
+    background-position: calc(50% - 40vw) 50%;
     background-size: cover;
     }
 
@@ -616,52 +616,87 @@ footer {
 
 @media screen and (min-width: 768px) and (max-height: 600px) {
   body {
-    background-position: calc(50% - 30vw) 50%;
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
   }
 }
 
 @media screen and (min-width: 768px) and (min-height: 601px) and (max-height: 1024px) {
   body {
-    background-position: calc(50% - 52vw) 50%;
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 769px) and (min-height: 1023px) and (max-height: 1024px) {
+  body {
+      background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+      background-size: cover;
+      background-position: calc(50% - 29vw) 50%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px) and (max-height: 807px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-height: 600px) {
   body {
-    background-position: calc(50% - 15vw) 50%;
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
 @media screen and (min-width: 1024px) and (min-height: 601px) {
   body {
-    background-position: calc(50% - 30vw) 50%;
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
+    background-position: calc(50% - 38vw) 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 601px) {
+  body {
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 1024px) {
+  body {
+      background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+      background-size: cover;
+      background-position: calc(50% - 38vw) 50%;
   }
 }
 
 /* Larger screens (1280px and up) */
 @media screen and (min-width: 1280px) and (min-height: 601px) {
   body {
-    background-position: calc(50% - 28vw) 50%;
+    background-size: cover;
+    background-position: center;
   }
 }
 
-@media screen and (min-width: 1350px) and (max-height: 600px) {
+
+@media screen and (min-width: 1350px) and (min-height: 601px) {
   body {
-    background-position: calc(50% - 15vw) 50%;
+    background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
 @media screen and (min-width: 1440px) and (max-height: 600px) {
   body {
-    background-position: center;
-  }
-}
-
-/* Extra-large screens (2250px and above) */
-@media screen and (min-width: 2250px) {
-  body {
     background: url(../images/hourglass-freepik2large.avif), url(../images/hourglass-freepik2large.avif) no-repeat;
+    background-size: cover;
     background-position: center;
   }
 }
-
