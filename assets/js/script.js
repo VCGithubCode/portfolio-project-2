@@ -636,3 +636,51 @@ function checkDate() {
     showConfetti();
   }
 }
+
+// Add event listeners for mouse click and key press sounds
+document.addEventListener('DOMContentLoaded', function() {
+		const mouseClickAudio = new Audio('assets/sounds/mouse-click.mp3');
+		const keyPressAudio = new Audio('assets/sounds/keyboard-press.mp3');
+	  
+
+  document.querySelectorAll('button, .home-link, #error-button, #instructionButton, .calculate-button, .recalculate-button, label, input[type="radio"], input[type="number"], .close, a').forEach(element => {
+    let isKeyDown = false;
+    element.addEventListener('click', (e) => {
+      if (!isKeyDown && element.tagName === 'A') {
+        e.preventDefault();
+        mouseClickAudio.pause();
+        keyPressAudio.pause();
+        mouseClickAudio.currentTime = 0;
+        mouseClickAudio.play();
+        
+        setTimeout(() => {
+          window.location.href = element.href;
+        }, 275);
+      } else if (!isKeyDown) {
+        mouseClickAudio.pause();
+        keyPressAudio.pause();
+        mouseClickAudio.currentTime = 0;
+        mouseClickAudio.play();
+      }
+      isKeyDown = false;
+    });
+
+    element.addEventListener('keydown', (e) => {
+      isKeyDown = true;
+      
+      // Handle regular tabbing sounds for all elements
+      keyPressAudio.pause();
+      mouseClickAudio.pause();
+      keyPressAudio.currentTime = 0;
+      keyPressAudio.play();
+    
+      // Additional handling for Enter key on links
+      if (e.key === 'Enter' && element.tagName === 'A') {
+        e.preventDefault();
+        setTimeout(() => {
+          window.location.href = element.href;
+        }, 275);
+      }
+    });
+  });
+});
