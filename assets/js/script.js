@@ -639,9 +639,12 @@ function checkDate() {
 
 // Add event listeners for mouse click and key press sounds
 document.addEventListener('DOMContentLoaded', function() {
-		const mouseClickAudio = new Audio('assets/sounds/mouse-click.mp3');
-		const keyPressAudio = new Audio('assets/sounds/keyboard-press.mp3');
-	  
+
+  window.mouseClickAudio = new Audio('assets/sounds/mouse-click.mp3');
+  window.keyPressAudio = new Audio('assets/sounds/keyboard-press.mp3');
+  
+  window.mouseClickAudio.volume = window.currentVolume;
+  window.keyPressAudio.volume = window.currentVolume;
 
   document.querySelectorAll('button, .home-link, #error-button, #instructionButton, .calculate-button, .recalculate-button, label, input[type="radio"], input[type="number"], .close, a').forEach(element => {
     let isKeyDown = false;

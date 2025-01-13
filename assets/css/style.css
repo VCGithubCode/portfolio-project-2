@@ -344,7 +344,34 @@ input[type="date"]:focus-visible {
   box-shadow: 0px 0px 10px 4px var(--tertiary-color);
 }
 
-label {
+.volume-container {
+  width: 180px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--transparent-bg-dark);
+  border: solid 1px #9191918c;
+  border-radius: 16px;
+}
+
+.volume-container label {
+  height: 30px;
+  width: 150px;
+  padding-block: 10px;
+  margin-bottom: 15px;
+  margin-inline: auto;
+}
+
+
+.volume-container input[type="range"] {
+  width: 150px;
+  padding-block: 0;
+  margin-top: 0;
+  margin-inline: auto;
+}
+
+label:not(:first-child) {
   display: block;
   background: var(--transparent-bg-dark);
   color: var(--light-color);
