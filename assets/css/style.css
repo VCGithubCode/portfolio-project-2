@@ -3,6 +3,37 @@
 /* Root Font Size */
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 0.85s cubic-bezier(0.87, 0, 0.13, 1) both move-out;
+}
+
+::view-transition-new(root) {
+  animation: 0.8s cubic-bezier(0.87, 0, 0.13, 1) both move-in;
+}
+
+@keyframes move-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes move-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Custom scrollbar for WebKit browsers */
