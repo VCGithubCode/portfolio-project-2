@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.mouseClickAudio.volume = window.currentVolume;
   window.keyPressAudio.volume = window.currentVolume;
 
-  document.querySelectorAll('button, .home-link, #instructionButton, .calculate-button, .recalculate-button, input[type="radio"], input[type="number"], .close, a').forEach(element => {
+  document.querySelectorAll('button, .home-link, #instructionButton, .calculate-button, .recalculate-button, input[type="radio"], input[type="number"], input[type="date"], .close, a').forEach(element => {
     let isKeyDown = false;
     element.addEventListener('click', (e) => {
       if (!isKeyDown && element.tagName === 'A') {
