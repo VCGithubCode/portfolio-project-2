@@ -75,7 +75,7 @@ The calendar emoji was chosen as a simple and clear representation of dates.
 
 * ## Loader
 
-
+[Loader](assets/images/Loader.mov)
 
 * ## Header
 
@@ -343,5 +343,5 @@ The background image on the 404.html page was created with the help of [Leonardo
 - The text content on the website is written by me.
 
 ### Acknowledgements
-- I would like to thank my mentor, [Daisy McGirr](https://github.com/Dee-McG) for her guidance, encouragement, and support throughout this project and the course.
+- I would like to thank my mentor, [Daisy Mc Girr](https://github.com/Dee-McG) for her guidance, encouragement, and support throughout this project and the course.
 
